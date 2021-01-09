@@ -6,6 +6,10 @@ module.exports = {
       colors: {
         'accent-1': '#333',
       },
+      backgroundImage: theme => ({
+        'hero-pattern': "url('/hero.jpg')",
+        'footer-texture': "url('/img/footer-texture.png')",
+       })
     },
   },
   variants: {

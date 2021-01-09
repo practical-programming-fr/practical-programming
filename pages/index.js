@@ -1,15 +1,19 @@
 import Nav from '../components/nav'
 import Footer from '../components/footer'
+import Hero from '../components/hero'
+import Latest from '../components/latest'
+import Section from '../components/section'
 
 export default function IndexPage() {
   return (
     <div>
       <Nav />
-      <div className="flex flex-col h-screen justify-between py-20">
-        <h1 className="text-5xl text-center text-gray-700 dark:text-gray-100">
-          Next.js + Tailwind CSS 2.0
-        </h1>
-      </div>
+      <Hero/>
+      <Latest/>
+      <Hero/>
+      <Section/>
+      <Section/>
+      <Section/>
       <Footer/>
     </div>
   )

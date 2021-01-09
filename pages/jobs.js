@@ -13,62 +13,80 @@ export default function JobsPage() {
       <div className="w-full lg:w-8/12">
         <div className="flex items-center justify-between">
           <h1 className="text-xl font-bold text-gray-700 md:text-2xl">Jobs</h1>
-          <div>
-            <select className="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-              <option>Latest</option>
-              <option>Last Week</option>
-            </select>
+        </div>
+        <div className="mt-6">
+          <div className="max-w-4xl px-5 py-6 bg-white rounded-lg shadow-md">
+            <div className="flex">
+                <a href="#" className="flex items-center"><img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=731&q=80" alt="avatar" className="mx-4 w-20 h-20 object-cover rounded hidden sm:block" />
+                </a>
+                <div>
+                    <div className="ml-5">
+                        <h1 className="text-gray-700 hover:underline">Apple</h1>
+                        <a href="#" className="text-2xl text-gray-700 font-bold hover:underline">Développeur Laravel</a>
+                        <div className="flex">
+                            <p className="text-gray-700 hover:underline mr-5">Paris</p>
+                            <p className="text-gray-700 hover:underline mr-5">Télétravail Partiel</p>
+                            <p className="text-gray-700 hover:underline mr-5">Première expérience requise</p>
+                        </div>
+                    </div>
+                </div>
+            <div className="flex">
+                
+                {/*Location*/}
+                <div className="justify-between items-center mt-4">
+                    <svg class="svg-icon" viewBox="0 0 20 20">
+                        <path d="M10,1.375c-3.17,0-5.75,2.548-5.75,5.682c0,6.685,5.259,11.276,5.483,11.469c0.152,0.132,0.382,0.132,0.534,0c0.224-0.193,5.481-4.784,5.483-11.469C15.75,3.923,13.171,1.375,10,1.375 M10,17.653c-1.064-1.024-4.929-5.127-4.929-10.596c0-2.68,2.212-4.861,4.929-4.861s4.929,2.181,4.929,4.861C14.927,12.518,11.063,16.627,10,17.653 M10,3.839c-1.815,0-3.286,1.47-3.286,3.286s1.47,3.286,3.286,3.286s3.286-1.47,3.286-3.286S11.815,3.839,10,3.839 M10,9.589c-1.359,0-2.464-1.105-2.464-2.464S8.641,4.661,10,4.661s2.464,1.105,2.464,2.464S11.359,9.589,10,9.589"></path>
+                    </svg>
+                </div>
+                {/*Tags*/}
+                <div className="flex justify-between items-center mt-4">
+                    <div>
+                    <a href="#" className="mr-2 px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500">PHP</a>
+                    <a href="#" className="mr-2 px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500">Laravel</a>
+                    <a href="#" className="mr-2 px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500">AWS</a>
+                    <a href="#" className="mr-2 px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500">MySQL</a>
+                    </div>
+                </div>
+            </div>
+            
+            </div>
           </div>
         </div>
         <div className="mt-6">
-          <div className="max-w-4xl px-10 py-6 bg-white rounded-lg shadow-md">
-            <div className="flex justify-between items-center">
-                <span className="font-light text-gray-600">Jun 1, 2020</span>
+          <div className="max-w-4xl px-5 py-6 bg-white rounded-lg shadow-md">
+            <div className="flex">
+                <a href="#" className="flex items-center"><img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=731&q=80" alt="avatar" className="mx-4 w-20 h-20 object-cover rounded hidden sm:block" />
+                </a>
                 <div>
-                    <a href="#" className="flex items-center"><img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=731&q=80" alt="avatar" className="mx-4 w-10 h-10 object-cover rounded hidden sm:block" />
-                    <h1 className="text-gray-700 font-bold hover:underline">Apple</h1>
-                    </a>
+                
+                <div className="ml-5">
+                    <h1 className="text-gray-700 hover:underline">Qonto</h1>
+                    <a href="#" className="text-2xl text-gray-700 font-bold hover:underline">Développeur Confirmé React</a>
+                    <div className="flex">
+                        <p className="text-gray-700 hover:underline mr-5">Paris</p>
+                        <p className="text-gray-700 hover:underline mr-5">Télétravail Partiel</p>
+                        <p className="text-gray-700 hover:underline mr-5">Première expérience requise</p>
+                    </div>
                 </div>
             </div>
-            <div className="mt-2">
-                <a href="#" className="text-2xl text-gray-700 font-bold hover:underline">Développeur Laravel</a>
-              <p className="mt-2 text-gray-600">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Tempora expedita dicta totam aspernatur doloremque. Excepturi iste iusto eos enim
-                reprehenderit nisi, accusamus delectus nihil quis facere in modi ratione libero!</p>
-            </div>
-            {/*Location*/}
-            <div className="flex justify-between items-center mt-4">
-                <svg class="svg-icon" viewBox="0 0 20 20">
-                    <path d="M10,1.375c-3.17,0-5.75,2.548-5.75,5.682c0,6.685,5.259,11.276,5.483,11.469c0.152,0.132,0.382,0.132,0.534,0c0.224-0.193,5.481-4.784,5.483-11.469C15.75,3.923,13.171,1.375,10,1.375 M10,17.653c-1.064-1.024-4.929-5.127-4.929-10.596c0-2.68,2.212-4.861,4.929-4.861s4.929,2.181,4.929,4.861C14.927,12.518,11.063,16.627,10,17.653 M10,3.839c-1.815,0-3.286,1.47-3.286,3.286s1.47,3.286,3.286,3.286s3.286-1.47,3.286-3.286S11.815,3.839,10,3.839 M10,9.589c-1.359,0-2.464-1.105-2.464-2.464S8.641,4.661,10,4.661s2.464,1.105,2.464,2.464S11.359,9.589,10,9.589"></path>
-                </svg>
-            </div>
-            {/*Tags*/}
-            <div className="flex justify-between items-center mt-4">
-                <div>
-                <a href="#" className="mr-2 px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500">PHP</a>
-                <a href="#" className="mr-2 px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500">Laravel</a>
-                <a href="#" className="mr-2 px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500">Laravel</a>
-                <a href="#" className="mr-2 px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500">Laravel</a>
+            <div className="flex">
+                
+                {/*Location*/}
+                <div className="justify-between items-center mt-4">
+                    <svg class="svg-icon" viewBox="0 0 20 20">
+                        <path d="M10,1.375c-3.17,0-5.75,2.548-5.75,5.682c0,6.685,5.259,11.276,5.483,11.469c0.152,0.132,0.382,0.132,0.534,0c0.224-0.193,5.481-4.784,5.483-11.469C15.75,3.923,13.171,1.375,10,1.375 M10,17.653c-1.064-1.024-4.929-5.127-4.929-10.596c0-2.68,2.212-4.861,4.929-4.861s4.929,2.181,4.929,4.861C14.927,12.518,11.063,16.627,10,17.653 M10,3.839c-1.815,0-3.286,1.47-3.286,3.286s1.47,3.286,3.286,3.286s3.286-1.47,3.286-3.286S11.815,3.839,10,3.839 M10,9.589c-1.359,0-2.464-1.105-2.464-2.464S8.641,4.661,10,4.661s2.464,1.105,2.464,2.464S11.359,9.589,10,9.589"></path>
+                    </svg>
                 </div>
-                <a href="#" className="text-blue-500 hover:underline">Read more</a>
+                {/*Tags*/}
+                <div className="flex justify-between items-center mt-4">
+                    <div>
+                    <a href="#" className="mr-2 px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500">React</a>
+                    <a href="#" className="mr-2 px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500">Redux</a>
+                    <a href="#" className="mr-2 px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500">Jest</a>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div className="mt-6">
-          <div className="max-w-4xl px-10 py-6 bg-white rounded-lg shadow-md">
-            <div className="flex justify-between items-center"><span className="font-light text-gray-600">mar 4,
-                2019</span><a href="#" className="px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500">Design</a>
-            </div>
-            <div className="mt-2"><a href="#" className="text-2xl text-gray-700 font-bold hover:underline">Accessibility tools for
-                designers and developers</a>
-              <p className="mt-2 text-gray-600">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Tempora expedita dicta totam aspernatur doloremque. Excepturi iste iusto eos enim
-                reprehenderit nisi, accusamus delectus nihil quis facere in modi ratione libero!</p>
-            </div>
-            <div className="flex justify-between items-center mt-4"><a href="#" className="text-blue-500 hover:underline">Read more</a>
-              <div><a href="#" className="flex items-center"><img src="https://images.unsplash.com/photo-1464863979621-258859e62245?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=333&q=80" alt="avatar" className="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block" />
-                  <h1 className="text-gray-700 font-bold hover:underline">Jane Doe</h1>
-                </a></div>
+            
             </div>
           </div>
         </div>
