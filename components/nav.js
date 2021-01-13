@@ -8,8 +8,7 @@ const links = [
 export default function Nav() {
   return (
 <>
-{/* This example requires Tailwind CSS v2.0+ */}
-<nav className="bg-gray-800">
+<nav className="bg-white border-b">
   <div className="max-w-7xl mx-auto px-2">
     <div className="relative flex items-center justify-between h-20">
       <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -44,12 +43,12 @@ export default function Nav() {
         <div className="hidden sm:block sm:ml-6">
           <div className="flex space-x-4">
             {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-            <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Devenir Développeur</a>
-            <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Node</a>
-            <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">MongoDB</a>
-            <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Postman</a>
-            <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Académie</a>
-            <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Jobs</a>
+            <a href="#" className="text-gray-800 hover:text-gray-500 tracking-widest px-3 py-2 rounded-md text-sm font-medium">Devenir Développeur</a>
+            <a href="#" className="text-gray-800 hover:text-gray-500 tracking-widest px-3 py-2 rounded-md text-sm font-medium">Node</a>
+            <a href="#" className="text-gray-800 hover:text-gray-500 tracking-widest px-3 py-2 rounded-md text-sm font-medium">MongoDB</a>
+            <a href="#" className="text-gray-800 hover:text-gray-500 tracking-widest px-3 py-2 rounded-md text-sm font-medium">Postman</a>
+            <a href="#" className="text-gray-800 hover:text-gray-500 tracking-widest px-3 py-2 rounded-md text-sm font-medium">Académie</a>
+            <a href="#" className="text-gray-800 hover:text-gray-500 tracking-widest px-3 py-2 rounded-md text-sm font-medium">Jobs</a>
           </div>
         </div>
       </div>

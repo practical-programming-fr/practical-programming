@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         'accent-1': '#333',
+        'beige':'#FAF8F4'
       },
       backgroundImage: theme => ({
         'hero-pattern': "url('/hero.jpg')",
