@@ -4,6 +4,9 @@ import Hero from '../components/hero'
 import Latest from '../components/latest'
 import Section from '../components/section'
 
+
+
+
 export default function IndexPage() {
   return (
     <div>
@@ -18,3 +21,5 @@ export default function IndexPage() {
     </div>
   )
 }
+
+
