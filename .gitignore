@@ -13,6 +13,8 @@
 /out/
 /sanity/
 
+/lib/sanity
+
 # production
 /build
 

@@ -2,7 +2,7 @@ import Footer from '../components/footer'
 import Metrics from '../components/metrics'
 import Nav from '../components/nav'
 
-export default function JobsPage() {
+const JobsPage: React.FC = () => {
   return (
     <div className="flex flex-col h-screen justify-between">
       <Nav />
@@ -454,3 +454,4 @@ export default function JobsPage() {
     </div>
   )
 }
+export default JobsPage

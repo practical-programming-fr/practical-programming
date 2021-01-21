@@ -1,4 +1,4 @@
-export default function Hero() {
+export default function Hero({ post }) {
   return (
     <section className="bg-gray-100 dark:bg-gray-900 lg:py-12 lg:flex lg:justify-center">
       <div className="bg-white dark:bg-gray-800 lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg lg:rounded-lg">

@@ -1,4 +1,4 @@
-export default function Section() {
+export default function Section({ posts }) {
   return (
     <section className="text-gray-600 body-font">
       <div className="container px-5 py-6 mx-auto lg:max-w-5xl">
@@ -14,14 +14,13 @@ export default function Section() {
                 alt="blog"
               />
               <div className="p-6">
-                <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
-                  CATEGORY
+                <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1 uppercase">
+                  {posts[0].categories.title}
                 </h2>
-                <h1 className="title-font text-lg font-medium text-gray-900 mb-3">The Catalyzer</h1>
-                <p className="leading-relaxed mb-3">
-                  Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing
-                  tousled waistcoat.
-                </p>
+                <h1 className="title-font text-lg font-medium text-gray-900 mb-3 uppercase">
+                  {posts[0].title}
+                </h1>
+                <p className="leading-relaxed mb-3">{posts[0].excerpt}</p>
                 <div className="flex items-center flex-wrap ">
                   <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
                     Learn More
@@ -144,15 +143,17 @@ export default function Section() {
                 alt="blog"
               />
               <div className="p-6">
-                <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
+                <h3 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
                   CATEGORY
+                </h3>
+                <h2 className="title-font text-lg font-medium text-gray-900 mb-3">
+                  {posts[0].title}
                 </h2>
-                <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
-                  Shooting Stars
-                </h1>
                 <p className="leading-relaxed mb-3">
                   Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing
-                  tousled waistcoat.
+                  tousled waistcoat.Photo booth fam kinfolk cold-pressed sriracha leggings jianbing
+                  microdosing tousled waistcoat.Photo booth fam kinfolk cold-pressed sriracha
+                  leggings jianbing microdosing tousled waistcoat.
                 </p>
                 <div className="flex items-center flex-wrap ">
                   <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">

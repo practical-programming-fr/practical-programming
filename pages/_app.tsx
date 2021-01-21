@@ -1,7 +1,7 @@
 import '../styles/index.css'
-import 'prismjs/themes/prism-tomorrow.css'
+import type { AppProps } from 'next/app'
 
-function MyApp({ Component, pageProps }) {
+const MyApp: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   return <Component {...pageProps} />
 }
 

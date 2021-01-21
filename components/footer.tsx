@@ -1,11 +1,4 @@
-import Link from 'next/link'
-
-const links = [
-  { href: 'https://github.com/vercel/next.js', label: 'GitHub' },
-  { href: 'https://nextjs.org/docs', label: 'Docs' },
-]
-
-export default function Footer() {
+const Footer: React.FC = () => {
   return (
     <>
       <footer className="z-10 relative text-gray-600 body-font bg-gray-100">
@@ -222,3 +215,5 @@ export default function Footer() {
     </>
   )
 }
+
+export default Footer

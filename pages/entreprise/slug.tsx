@@ -1,7 +1,7 @@
 import Nav from '../../components/nav'
 import Footer from '../../components/footer'
 
-export default function PostPage() {
+const EntrprisePage: React.FC = () => {
   return (
     <div>
       <Nav />
@@ -149,3 +149,5 @@ export default function PostPage() {
     </div>
   )
 }
+
+export default EntrprisePage
