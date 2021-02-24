@@ -14,7 +14,7 @@
 /sanity/
 
 lib/sanity
-lib/gtag
+lib/gtag.ts
 
 # production
 /build

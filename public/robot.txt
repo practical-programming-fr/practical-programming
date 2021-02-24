@@ -1,4 +1,4 @@
-Sitemap: https://domain.com/sitemap.xml
+Sitemap: https://practicalprogramming.fr/sitemap.xml
 
 
 User-agent: *
