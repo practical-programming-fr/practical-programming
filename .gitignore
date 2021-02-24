@@ -14,9 +14,12 @@
 /sanity/
 
 lib/sanity
+lib/gtag
 
 # production
 /build
+/public
+
 
 # misc
 .DS_Store

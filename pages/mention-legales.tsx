@@ -1,9 +1,13 @@
 import Nav from '../components/nav'
 import Footer from '../components/footer'
-
-export default function MentionLegales() {
+import { NextSeo } from 'next-seo'
+const MentionLegales: React.FC = () => {
   return (
     <div>
+      <NextSeo
+        title="Mention Légales - Practical Programming"
+        description="Mention Légales Practical Programming "
+      />
       <Nav />
       <section className="py-12">
         <div className="max-w-4xl mx-auto px-8 py-5 bg-white dark:bg-gray-800 rounded-lg shadow-md">
@@ -60,3 +64,5 @@ export default function MentionLegales() {
     </div>
   )
 }
+
+export default MentionLegales

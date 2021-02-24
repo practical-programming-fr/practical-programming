@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 const Footer: React.FC = () => {
   return (
     <>
@@ -30,24 +32,25 @@ const Footer: React.FC = () => {
               </h2>
               <nav className="list-none mb-10">
                 <li className="pb-2">
-                  <a className="text-gray-600 hover:text-gray-900 cursor-pointer">
-                    Politique de confidentialité
-                  </a>
+                  <Link href="/politique-de-confidentialite">
+                    <a className="text-gray-600 hover:text-gray-900 hover:underline cursor-pointer">
+                      Politique de confidentialité
+                    </a>
+                  </Link>
                 </li>
                 <li className="pb-2">
-                  <a className="text-gray-600 hover:text-gray-900 cursor-pointer">
-                    Gestion des cookies
-                  </a>
+                  <Link href="/gestion-des-cookies">
+                    <a className="text-gray-600 hover:text-gray-900 hover:underline cursor-pointer">
+                      Gestion des cookies
+                    </a>
+                  </Link>
                 </li>
                 <li className="pb-2">
-                  <a className="text-gray-600 hover:text-gray-900 cursor-pointer">
-                    Mentions légales
-                  </a>
-                </li>
-                <li className="pb-2">
-                  <a className="text-gray-600 hover:text-gray-900 cursor-pointer">
-                    Droit à l'oubli
-                  </a>
+                  <Link href="/gestion-des-cookies">
+                    <a className="text-gray-600 hover:text-gray-900 hover:underline cursor-pointer">
+                      Mentions légales
+                    </a>
+                  </Link>
                 </li>
               </nav>
             </div>
@@ -57,40 +60,39 @@ const Footer: React.FC = () => {
               </h2>
               <nav className="list-none mb-10">
                 <li className="pb-2">
-                  <a className="text-gray-600 hover:text-gray-900 cursor-pointer">
-                    Conseil carrière
-                  </a>
+                  <Link href="/category/conseil-carriere">
+                    <a className="text-gray-600 hover:text-gray-900 hover:underline cursor-pointer">
+                      Conseil carrière
+                    </a>
+                  </Link>
                 </li>
                 <li className="pb-2">
-                  <a className="text-gray-600 hover:text-gray-900 cursor-pointer">Frontend</a>
+                  <Link href="/category/frontend">
+                    <a className="text-gray-600 hover:text-gray-900 hover:underline cursor-pointer">
+                      Frontend
+                    </a>
+                  </Link>
                 </li>
                 <li className="pb-2">
-                  <a className="text-gray-600 hover:text-gray-900 cursor-pointer">Node</a>
+                  <Link href="/category/node">
+                    <a className="text-gray-600 hover:text-gray-900 hover:underline cursor-pointer">
+                      Node
+                    </a>
+                  </Link>
                 </li>
                 <li className="pb-2">
-                  <a className="text-gray-600 hover:text-gray-900 cursor-pointer">Clean Code</a>
+                  <Link href="/category/clean-code">
+                    <a className="text-gray-600 hover:text-gray-900 hover:underline cursor-pointer">
+                      Clean Code
+                    </a>
+                  </Link>
                 </li>
                 <li className="pb-2">
-                  <a className="text-gray-600 hover:text-gray-900 cursor-pointer">JavaScript</a>
-                </li>
-              </nav>
-            </div>
-            <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-              <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
-                JOBS
-              </h2>
-              <nav className="list-none mb-10">
-                <li className="pb-2">
-                  <a className="text-gray-600 hover:text-gray-900">First Link</a>
-                </li>
-                <li className="pb-2">
-                  <a className="text-gray-600 hover:text-gray-900">Second Link</a>
-                </li>
-                <li className="pb-2">
-                  <a className="text-gray-600 hover:text-gray-900">Third Link</a>
-                </li>
-                <li className="pb-2">
-                  <a className="text-gray-600 hover:text-gray-900">Fourth Link</a>
+                  <Link href="/category/javascript">
+                    <a className="text-gray-600 hover:text-gray-900 hover:underline cursor-pointer">
+                      JavaScript
+                    </a>
+                  </Link>
                 </li>
               </nav>
             </div>
@@ -100,22 +102,34 @@ const Footer: React.FC = () => {
               </h2>
               <nav className="list-none mb-10">
                 <li className="pb-2">
-                  <a className="text-gray-600 hover:text-gray-900">
-                    Comment prioriser les différentes notions pour monter en compétences
-                    efficacement ?
-                  </a>
+                  <Link href="/devenir-developpeur">
+                    <a className="text-gray-600 hover:text-gray-900 hover:underline cursor-pointer">
+                      Devenir Développeur
+                    </a>
+                  </Link>
                 </li>
                 <hr />
                 <li className="pb-2">
-                  <a className="text-gray-600 hover:text-gray-900">
-                    Scraping: créer un bot Instagram avec Puppeteer
-                  </a>
+                  <Link href="/nodejs">
+                    <a className="text-gray-600 hover:text-gray-900 hover:underline cursor-pointer">
+                      NodeJS
+                    </a>
+                  </Link>
                 </li>
                 <hr />
                 <li className="pb-2">
-                  <a className="text-gray-600 hover:text-gray-900">
-                    DbaaS: La base de données managée dans le cloud
-                  </a>
+                  <Link href="/mongodb">
+                    <a className="text-gray-600 hover:text-gray-900 hover:underline cursor-pointer">
+                      MongoDB
+                    </a>
+                  </Link>
+                </li>
+                <li className="pb-2">
+                  <Link href="/postman">
+                    <a className="text-gray-600 hover:text-gray-900 hover:underline cursor-pointer">
+                      Postman
+                    </a>
+                  </Link>
                 </li>
                 <hr />
               </nav>

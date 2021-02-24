@@ -1,10 +1,5 @@
 import Link from 'next/link'
 
-const links = [
-  { href: 'https://github.com/vercel/next.js', label: 'GitHub' },
-  { href: 'https://nextjs.org/docs', label: 'Docs' },
-]
-
 export default function Nav() {
   return (
     <>
@@ -64,62 +59,57 @@ export default function Nav() {
             </div>
             <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
               <div className="flex-shrink-0 flex items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  className="block w-10 h-10 text-white p-2 bg-blue-500 rounded-full"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                </svg>
+                <Link href="/">
+                  <a>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      className="block w-10 h-10 text-white p-2 bg-blue-500 rounded-full"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                  </a>
+                </Link>
+                <p className="invisible lg:visible ml-2 text-lg">Practical Programming</p>
               </div>
               <div className="hidden sm:block sm:ml-6">
                 <div className="flex space-x-4">
                   {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
+                  <Link href="/devenir-developpeur">
+                    <a className="text-gray-800 hover:text-gray-500 tracking-widest px-3 py-2 rounded-md text-sm font-medium">
+                      Devenir Développeur
+                    </a>
+                  </Link>
+                  <Link href="/nodejs">
+                    <a className="text-gray-800 hover:text-gray-500 tracking-widest px-3 py-2 rounded-md text-sm font-medium">
+                      Node
+                    </a>
+                  </Link>
+                  <Link href="/mongodb">
+                    <a className="text-gray-800 hover:text-gray-500 tracking-widest px-3 py-2 rounded-md text-sm font-medium">
+                      MongoDB
+                    </a>
+                  </Link>
+                  <Link href="/postman">
+                    <a className="text-gray-800 hover:text-gray-500 tracking-widest px-3 py-2 rounded-md text-sm font-medium">
+                      Postman
+                    </a>
+                  </Link>
                   <a
-                    href="#"
-                    className="text-gray-800 hover:text-gray-500 tracking-widest px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    Devenir Développeur
-                  </a>
-                  <a
-                    href="#"
-                    className="text-gray-800 hover:text-gray-500 tracking-widest px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    Node
-                  </a>
-                  <a
-                    href="#"
-                    className="text-gray-800 hover:text-gray-500 tracking-widest px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    MongoDB
-                  </a>
-                  <a
-                    href="#"
-                    className="text-gray-800 hover:text-gray-500 tracking-widest px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    Postman
-                  </a>
-                  <a
-                    href="#"
+                    href="https://academy.practicalprogramming.fr"
                     className="text-gray-800 hover:text-gray-500 tracking-widest px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Académie
                   </a>
-                  <a
-                    href="#"
-                    className="text-gray-800 hover:text-gray-500 tracking-widest px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    Jobs
-                  </a>
                 </div>
               </div>
             </div>
-            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 invisible">
               <button className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                 <span className="sr-only">View notifications</span>
                 {/* Heroicon name: bell */}
@@ -140,7 +130,7 @@ export default function Nav() {
                 </svg>
               </button>
               {/* Profile dropdown */}
-              <div className="ml-3 relative">
+              <div className="ml-3 relative invisible">
                 <div>
                   <button
                     className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"

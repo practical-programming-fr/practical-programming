@@ -1,9 +1,14 @@
 import Nav from '../components/nav'
 import Footer from '../components/footer'
+import { NextSeo } from 'next-seo'
 
-export default function Confidentialite() {
+const Confidentialite: React.FC = () => {
   return (
     <div>
+      <NextSeo
+        title="Politique de confidentialité - Practical Programming"
+        description="Politique de confidentialité pour Practical Programming "
+      />
       <Nav />
       <section className="py-12">
         <div className="max-w-4xl mx-auto px-8 py-5 bg-white dark:bg-gray-800 rounded-lg shadow-md">
@@ -58,3 +63,4 @@ export default function Confidentialite() {
     </div>
   )
 }
+export default Confidentialite

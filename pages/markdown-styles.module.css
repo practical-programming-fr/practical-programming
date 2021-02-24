@@ -2,7 +2,10 @@
     @apply text-lg leading-relaxed;
   }
   
-  .markdown p,
+  .markdown p {
+    @apply font-serif my-6
+  }
+
   .markdown ul,
   .markdown ol,
   .markdown blockquote {
@@ -16,4 +19,18 @@
   .markdown h3 {
     @apply text-2xl mt-8 mb-4 leading-snug;
   }
+
+  .markdown a {
+    @apply underline text-blue-500;
+  }
   
+  .markdown ul {
+    @apply list-disc
+  }
+
+  .markdown ol {
+    @apply list-decimal
+  }
+  .markdown li {
+    @apply mt-2
+  }
