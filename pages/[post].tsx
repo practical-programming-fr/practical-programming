@@ -22,6 +22,7 @@ import Link from 'next/link'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import Rubriques from '../components/post/rubriques'
 import RelatedPost from '../components/post/relatedPost'
+import { useNextSanityImage } from 'next-sanity-image'
 
 const article = `*[_type == "post" && slug.current == $slug][0]
 {
@@ -94,14 +95,12 @@ const serializers = {
       )
     },
     image: function imageSerializer(props) {
+      // eslint-disable-next-line react-hooks/rules-of-hooks
+      const imageProps = useNextSanityImage(sanity, props.node)
+
       return (
         <div>
-          <Image
-            src={urlFor(props.node).width(750).height(500).url()}
-            alt={props.node.alt}
-            width={750}
-            height={500}
-          />
+          <Image {...imageProps} sizes="(max-width: 750) 100vw, 750px" />
           <p className="font-thin text-center text-gray-800" style={{ marginTop: 0 }}>
             {props.node.caption}
           </p>
@@ -279,7 +278,6 @@ const Post: React.FC<any> = ({ post, relatedPosts }) => {
               </div>
               <Summary post={post} />
               <Rubriques post={post} />
-
               <BlockContent
                 blocks={post.body}
                 className={markdownStyles.markdown}
