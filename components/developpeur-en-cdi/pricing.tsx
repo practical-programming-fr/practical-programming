@@ -1,11 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
+import Link from 'next/link'
 const Pricing: React.FC = () => {
   return (
     <>
       {/* This example requires Tailwind CSS v2.0+ */}
       <>
         {/* This example requires Tailwind CSS v2.0+ */}
-        <div className="bg-gray-100">
+        <div className="bg-gray-100" id="pricing">
           <div className="pt-12 sm:pt-16 lg:pt-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center">
@@ -26,7 +27,7 @@ const Pricing: React.FC = () => {
                 <div className="max-w-lg mx-auto rounded-lg shadow-lg overflow-hidden lg:max-w-none lg:flex">
                   <div className="flex-1 bg-white px-6 py-8 lg:p-12">
                     <h3 className="text-2xl font-extrabold text-gray-900 sm:text-3xl">
-                      Accès à vie
+                      Offre valable pour les 10 premiers inscrits
                     </h3>
                     <p className="mt-6 text-base text-gray-500">
                       Le programme d'accompagnement pour compléter ta reconversion et décrocher ton
@@ -211,12 +212,11 @@ const Pricing: React.FC = () => {
                     </div>
                     <div className="mt-6">
                       <div className="rounded-md shadow">
-                        <a
-                          href="#"
-                          className="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-800 hover:bg-gray-900"
-                        >
-                          M'inscrire
-                        </a>
+                        <Link href="https://academy.practicalprogramming.fr/products/courses/view/1059090/?action=signup">
+                          <a className="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-800 hover:bg-gray-900">
+                            M'inscrire
+                          </a>
+                        </Link>
                       </div>
                     </div>
                   </div>

@@ -78,8 +78,7 @@ export default function Nav() {
                 <p className="invisible lg:visible ml-2 text-lg">Practical Programming</p>
               </div>
               <div className="hidden sm:block sm:ml-6">
-                <div className="flex space-x-4">
-                  {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
+                <div className="flex space-x-4 mt-1">
                   <Link href="/devenir-developpeur">
                     <a className="text-gray-800 hover:text-gray-500 tracking-widest px-3 py-2 rounded-md text-sm font-medium">
                       Devenir Développeur

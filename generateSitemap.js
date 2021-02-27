@@ -39,8 +39,8 @@ const client = sanityClient({
                 return `
                         <url>
                             <loc>${`https://practicalprogramming.fr${route}`}</loc>
-                            <lastmod>2005-01-01</lastmod>
-                            <changefreq>weekly</changefreq>
+                            <lastmod>2021-02-24</lastmod>
+                            <changefreq>monthly</changefreq>
                         </url>
                     `
               })
