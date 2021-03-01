@@ -31,8 +31,8 @@ const Rubriques: React.FC<any> = ({ post }) => {
                       <div className="flex-shrink-0">
                         <Image
                           src={relatedPost.image}
-                          width={310}
-                          height={195}
+                          width={512}
+                          height={201}
                           alt={relatedPost.title}
                           className="h-48 w-full object-cover"
                         />
@@ -41,12 +41,14 @@ const Rubriques: React.FC<any> = ({ post }) => {
                         <div className="flex-1">
                           <Link href={`/${relatedPost.slug.current}`}>
                             <a className="block mt-2">
-                              <p className="text-xl font-semibold text-gray-900">
+                              <p className="text-md lg:text-xl font-semibold text-gray-900">
                                 {relatedPost.title}
                               </p>
-                              <p className="mt-3 text-base text-gray-500">{relatedPost.excerpt}</p>
                             </a>
                           </Link>
+                          <p className="mt-3 text-base text-gray-500 hidden md:block">
+                            {relatedPost.excerpt}
+                          </p>
                         </div>
                       </div>
                     </div>
