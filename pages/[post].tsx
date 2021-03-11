@@ -2,7 +2,6 @@
 
 import Nav from '../components/nav'
 import Footer from '../components/footer'
-import Author from '../components/post/author'
 import Summary from '../components/post/summary'
 import Image from 'next/image'
 import sanity from '../lib/sanity'
@@ -14,6 +13,7 @@ import markdownStyles from './markdown-styles.module.css'
 import getYouTubeId from 'get-youtube-id'
 import YouTube from 'react-youtube'
 import dayjs from 'dayjs'
+import 'dayjs/locale/fr'
 import slugify from 'slugify'
 import { NextSeo, ArticleJsonLd, BreadcrumbJsonLd } from 'next-seo'
 import { SanityImageSource } from '@sanity/image-url/lib/types/types'
@@ -29,7 +29,8 @@ const article = `*[_type == "post" && slug.current == $slug][0]
   ..., 
   author->{
     name,
-    image
+    image,
+    slug
   },
   body[]{
     ...,
@@ -81,7 +82,7 @@ const overrides = {
     return <h2 id={slugify(JSON.stringify(props.children), options)} {...props} />
   },
   h3: function h3override(props) {
-    return <h3 id={slugify(JSON.stringify(props.children), options)} {...props} />
+    return <h3 id={slugify(JSON.stringify(props.children), options)} />
   },
 }
 
@@ -101,7 +102,10 @@ const serializers = {
       return (
         <div>
           <Image {...imageProps} sizes="(max-width: 750) 100vw, 750px" />
-          <p className="font-thin text-center text-gray-800" style={{ marginTop: 0 }}>
+          <p
+            className="font-thin text-center text-gray-800 dark:text-white"
+            style={{ marginTop: 0 }}
+          >
             {props.node.caption}
           </p>
         </div>
@@ -138,7 +142,7 @@ const serializers = {
   marks: {
     internalLink: function linkSerializer({ mark, children }) {
       const { slug = {} } = mark
-      const href = `/${slug.current}`
+      const href = `/${slug.current}/`
       return (
         <Link href={href}>
           <a>{children}</a>
@@ -241,11 +245,13 @@ const Post: React.FC<any> = ({ post, relatedPosts }) => {
         ]}
       />
       <Nav />
-      <section className="bg-white">
+      <section className="bg-white dark:bg-gray-900 dark:text-gray-200">
         <div className="lg:flex lg:flex-wrap justify-center h-full">
           <div className="flex-1 max-w-3xl">
-            <article className="px-8 py-8 bg-white dark:bg-gray-800">
-              <h1 className="text-5xl font-medium font-serif">{post.title}</h1>
+            <article className="px-8 py-8 bg-white dark:bg-gray-900">
+              <h1 className="text-3xl lg:text-5xl dark:text-white font-medium font-serif">
+                {post.title}
+              </h1>
               <ArticleJsonLd
                 url={`https://practicalprogramming.fr/${post.slug.current}`}
                 title={post.title}
@@ -254,7 +260,7 @@ const Post: React.FC<any> = ({ post, relatedPosts }) => {
                 dateModified={post._updatedAt}
                 authorName={post.author.name}
                 publisherName="Practical Programming"
-                publisherLogo="https://www.example.com/photos/logo.jpg"
+                publisherLogo="https://res.cloudinary.com/doquvzod9/image/upload/v1614090822/PRACTICAL_PROGRAMMING_1_necpbx.png"
                 description={post.metaDescription}
               />
               <BreadCrumbs post={post} />
@@ -268,10 +274,12 @@ const Post: React.FC<any> = ({ post, relatedPosts }) => {
                 />
 
                 <div className="mx-4 mt-4 flex flex-col">
-                  <p className="text-gray-800 text-lg leading-7 font-medium space-y-1">
-                    {post.author.name}
-                  </p>
-                  <p className="text-blue-700 -mt-2 leading-7 font-medium">
+                  <Link href={`/author/${post.author.slug.current}`}>
+                    <a className="text-gray-800 dark:text-gray-100 text-lg leading-7 font-medium space-y-1">
+                      {post.author.name}
+                    </a>
+                  </Link>
+                  <p className="text-blue-700 dark:text-gray-100 -mt-2 leading-7 font-medium">
                     {dayjs(post.publishedAt).locale('fr').format('D MMMM YYYY')}
                   </p>
                 </div>
@@ -284,11 +292,13 @@ const Post: React.FC<any> = ({ post, relatedPosts }) => {
                 serializers={serializers}
               />
             </article>
-            <Author author={post.author} />
           </div>
           <div className="p-4 max-w-lg">
-            <RelatedPost relatedPosts={relatedPosts} category={post.categories.title} />
-            {/* <StickyPost /> */}
+            <RelatedPost
+              relatedPosts={relatedPosts}
+              category={post.categories.title}
+              slug={post.categories.slug.current}
+            />
           </div>
         </div>
       </section>

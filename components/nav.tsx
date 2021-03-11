@@ -5,7 +5,7 @@ export default function Nav() {
   const [responsiveMenuisOpen, setResponsiveMenu] = useState(false)
   return (
     <>
-      <nav className="bg-white border-b">
+      <nav className="bg-white dark:bg-gray-900 border-b">
         <div className="max-w-7xl mx-auto px-2">
           <div className="relative flex items-center justify-between h-20">
             <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -80,32 +80,36 @@ export default function Nav() {
                     </svg>
                   </a>
                 </Link>
-                <p className="invisible lg:visible ml-2 text-lg">Practical Programming</p>
+                <Link href="/">
+                  <a className="invisible lg:visible dark:text-white ml-2 text-lg">
+                    Practical Programming
+                  </a>
+                </Link>
               </div>
               <div className="hidden sm:block sm:ml-6">
                 <div className="flex space-x-4 mt-1">
                   <Link href="/devenir-developpeur">
-                    <a className="text-gray-800 hover:text-gray-500 tracking-widest px-3 py-2 rounded-md text-sm font-medium">
+                    <a className="text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-white tracking-widest px-3 py-2 rounded-md text-sm font-medium">
                       Devenir Développeur
                     </a>
                   </Link>
                   <Link href="/nodejs">
-                    <a className="text-gray-800 hover:text-gray-500 tracking-widest px-3 py-2 rounded-md text-sm font-medium">
+                    <a className="text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-white tracking-widest px-3 py-2 rounded-md text-sm font-medium">
                       Node
                     </a>
                   </Link>
                   <Link href="/mongodb">
-                    <a className="text-gray-800 hover:text-gray-500 tracking-widest px-3 py-2 rounded-md text-sm font-medium">
+                    <a className="text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-white tracking-widest px-3 py-2 rounded-md text-sm font-medium">
                       MongoDB
                     </a>
                   </Link>
                   <Link href="/postman">
-                    <a className="text-gray-800 hover:text-gray-500 tracking-widest px-3 py-2 rounded-md text-sm font-medium">
+                    <a className="text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-white tracking-widest px-3 py-2 rounded-md text-sm font-medium">
                       Postman
                     </a>
                   </Link>
                   <Link href="https://academy.practicalprogramming.fr">
-                    <a className="text-gray-800 hover:text-gray-500 tracking-widest px-3 py-2 rounded-md text-sm font-medium">
+                    <a className="text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-white tracking-widest px-3 py-2 rounded-md text-sm font-medium">
                       Académie
                     </a>
                   </Link>

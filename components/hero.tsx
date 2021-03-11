@@ -13,11 +13,11 @@ export default function Hero({ post }) {
         </div>
         <div className="py-12 px-8 max-w-xl lg:max-w-5xl lg:w-1/2">
           <Link href={`/${post.slug.current}`}>
-            <h2 className="text-2xl text-gray-800 dark:text-white font-bold md:text-3xl hover:underline">
+            <h2 className="text-2xl text-gray-800 dark:text-white font-bold md:text-3xl hover:underline cursor-pointer">
               {post.title}
             </h2>
           </Link>
-          <p className="mt-4 text-gray-600 dark:text-gray-400">{post.excerpt}</p>
+          <p className="mt-4 text-gray-600 dark:text-white">{post.excerpt}</p>
           <div className="mt-8">
             <Link href={`/${post.slug.current}`}>
               <a className="bg-blue-500 text-white px-5 py-3 font-semibold rounded hover:bg-gray-800">

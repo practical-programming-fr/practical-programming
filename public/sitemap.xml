@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <sitemap>
@@ -7,14 +6,14 @@
    </sitemap>
    <sitemap>
       <loc>https://practicalprogramming.fr/category-sitemap.xml</loc>
-      <lastmod>2021-02-27T12:48:11.163Z</lastmod>
+      <lastmod>2021-03-11T10:38:14.393Z</lastmod>
    </sitemap>
    <sitemap>
       <loc>https://practicalprogramming.fr/page-sitemap.xml</loc>
-      <lastmod>2021-02-27T12:48:11.163Z</lastmod>
+      <lastmod>2021-03-11T10:38:14.393Z</lastmod>
    </sitemap>
    <sitemap>
       <loc>https://practicalprogramming.fr/post-sitemap.xml</loc>
-      <lastmod>2021-02-27T12:48:11.163Z</lastmod>
+      <lastmod>2021-03-11T10:38:14.393Z</lastmod>
    </sitemap>
 </sitemapindex>

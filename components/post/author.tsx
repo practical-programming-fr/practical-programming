@@ -35,9 +35,7 @@ const Author: React.FC<AuthorProps> = ({ author }) => {
           <Link href={`/titi`}>
             <a className="font-normal text-2xl ">{author.name}</a>
           </Link>
-          <p className="font-normal text-lg ">
-            Un superbe développeur JS passionné de tech et d'entrepreneuriat
-          </p>
+          <p className="font-normal text-lg "></p>
         </div>
       </div>
     </div>

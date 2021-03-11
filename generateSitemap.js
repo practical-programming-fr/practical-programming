@@ -29,8 +29,7 @@ const client = sanityClient({
   const categories = await client.fetch(categoryQuery)
   // Ignore Next.js specific files (e.g., _app.js) and API routes.
   const pages = await globby(['pages/**/*{.js,.tsx}', '!pages/_*{.js,.tsx}', '!pages/api', '!pages/**/[*{.js,.tsx}'])
-  const pageSitemap =`
-  <?xml version="1.0" encoding="UTF-8"?>
+  const pageSitemap =`<?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             ${pages
               .map((page) => {
@@ -47,8 +46,7 @@ const client = sanityClient({
               .join('')}
   </urlset>
 `
-  const postSitemap = `
-          <?xml version="1.0" encoding="UTF-8"?>
+  const postSitemap = `<?xml version="1.0" encoding="UTF-8"?>
           <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
                 ${posts
                   .map(post => {
@@ -63,8 +61,7 @@ const client = sanityClient({
           </urlset>
       `
 
-  const categorySitemap = `
-  <?xml version="1.0" encoding="UTF-8"?>
+  const categorySitemap = `<?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
         ${categories
           .map(category => {
@@ -79,8 +76,7 @@ const client = sanityClient({
   </urlset>
 `
 const today = new Date()
-const masterSitemap = `
-<?xml version="1.0" encoding="UTF-8"?>
+const masterSitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <sitemap>
       <loc>https://practicalprogramming.fr/author-sitemap.xml</loc>
@@ -114,12 +110,11 @@ const blogPostsRssXml = blogPosts => {
       latestPostDate = post.publishedAt;
     }
 
-    rssItemsXml += `
-      <item>
+    rssItemsXml += `<item>
         <title><![CDATA[${post.title}]]></title>
         <dc:creator><![CDATA[${post.author.name}]]></dc:creator>
         <link>${postHref}</link>
-        <pubDate>${dayjs(post.publishedAt).format("ddd, MMMM D YYYY, h:mm:ss a")}</pubDate>
+        <pubDate>${dayjs(post.publishedAt).format("ddd, D MMM YYYY HH:mm:ss ZZ")}</pubDate>
         <category><![CDATA[${post.category.title}]]></category>
         <guid isPermaLink="false">${postHref}</guid>
         <description>
@@ -145,19 +140,19 @@ const rssXml = blogPosts => {
     version="2.0"
   >
     <channel>
-        <title><![CDATA[Practical Programming : le Média des Développeurs Web#]]></title>
+        <title><![CDATA[Practical Programming : le Média des Développeurs Web]]></title>
         <link>https://practicalprogramming.fr</link>
-        <description>![CDATA[L'actualité dédié aux devs, c'est sur Practical Programming. Commencez ou boostez votre carrière avec nos guides, tutoriels, articles et bien d'autres.]]>
+        <description>![CDATA[L'actualité dédié aux devs, c'est sur Practical Programming. Commencez ou boostez votre carrière avec nos guides, tutoriels, articles et bien d'autres.]]
         </description>
         <language>fr</language>
         <image>
           <url>https://practicalprogramming.fr/wp-content/uploads/2020/07/cropped-PracticalProgramming-favicon-32x32.png</url>
-          <title>Practical Programming</title>
+          <title>Practical Programming : le Média des Développeurs Web</title>
           <link>https://practicalprogramming.fr</link>
           <width>32</width>
           <height>32</height>
         </image> 
-        <lastBuildDate>${latestPostDate}</lastBuildDate>
+        <lastBuildDate>${dayjs(latestPostDate).format("ddd, D MMM YYYY HH:mm:ss ZZ")}</lastBuildDate>
         ${rssItemsXml}
     </channel>
     

@@ -82,7 +82,8 @@ const organisationJsonId = {
         caption: 'Practical Programming',
       },
       image: {
-        '@id': 'http://practicalprogramming.fr/#logo',
+        '@id':
+          'https://res.cloudinary.com/doquvzod9/image/upload/v1614090822/PRACTICAL_PROGRAMMING_1_necpbx.png',
       },
     },
     {
