@@ -11,7 +11,7 @@ const Confidentialite: React.FC = () => {
       />
       <Nav />
       <section className="py-12">
-        <div className="max-w-4xl mx-auto px-8 py-5 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+        <div className="max-w-4xl mx-auto px-8 py-5 bg-white dark:bg-gray-900 dark:text-white rounded-lg shadow-md">
           <h1 className="text-4xl">Politique de confidentialite</h1>
           <p className="mt-5">
             Conformément à la loi Informatique et Libertés n°78-17 du 6 janvier 1978 modifiée et au

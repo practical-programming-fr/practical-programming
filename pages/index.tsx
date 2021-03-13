@@ -142,7 +142,16 @@ const IndexPage: React.FC<any> = ({ posts }) => {
           locale: 'fr_FR',
           type: 'website',
           title: 'Practical Programming : le Média des Développeurs Web',
-          description: 'Description du post',
+          description: 'Le Média des développeurs web souhaitant faire avancer leur carrière',
+          images: [
+            {
+              url:
+                'https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixqx=xNLzUn5i0j&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80',
+              width: 800,
+              height: 600,
+              alt: 'Practical Programming, le média pour les développeurs web',
+            },
+          ],
           site_name: 'Practical Programming',
           article: {
             section: 'Programming',

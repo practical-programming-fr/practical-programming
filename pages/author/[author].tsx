@@ -37,11 +37,28 @@ const urlFor: any = (source: SanityImageSource) => {
 
 const Author: React.FC<any> = ({ posts }) => {
   const author = posts[0].author
+
   return (
     <div>
       <NextSeo
         title={`${author.name} - Découvrez ses articles`}
         description={`Découvre les articles écrits par ${author.name}`}
+        canonical={`https://practicalprogramming.fr/author/${author.slug.current}`}
+        openGraph={{
+          url: `https://practicalprogramming.fr/${author.slug.current}`,
+          title: `${author.name} - Découvrez mes articles sur Practical Programming`,
+          description: 'Mes articles sur Practical Programming',
+          images: [
+            {
+              url:
+                'https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixqx=xNLzUn5i0j&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80',
+              width: 800,
+              height: 600,
+              alt: 'Développeur en CDI',
+            },
+          ],
+          site_name: 'Practical Programming',
+        }}
       />
 
       <SocialProfileJsonLd
@@ -72,7 +89,7 @@ const Author: React.FC<any> = ({ posts }) => {
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const slug = ctx.params.author
-  const getAuthorAndPosts = `*[_type == "post" && author._ref in *[_type=="author" && slug.current=="${slug}"]._id ]{title,slug,excerpt,"thumbnail":mainImage.asset->url,author->{name,bio,"url":image.asset->url,linkedin}}`
+  const getAuthorAndPosts = `*[_type == "post" && author._ref in *[_type=="author" && slug.current=="${slug}"]._id ]{title,slug,excerpt,"thumbnail":mainImage.asset->url,author->{name,bio,"url":image.asset->url,linkedin,slug}}`
   const posts = await sanity.fetch(getAuthorAndPosts)
   return { props: { posts } }
 }

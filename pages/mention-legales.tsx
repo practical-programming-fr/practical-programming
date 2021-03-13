@@ -10,7 +10,7 @@ const MentionLegales: React.FC = () => {
       />
       <Nav />
       <section className="py-12">
-        <div className="max-w-4xl mx-auto px-8 py-5 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+        <div className="max-w-4xl mx-auto px-8 py-5 bg-white dark:bg-gray-900 dark:text-white rounded-lg shadow-md">
           <h1 className="text-4xl">Mention Légales</h1>
           <p className="mt-5">Le Propriétaire du site et Responsable Publication est : </p>
           <ul className="mt-5">

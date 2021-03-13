@@ -11,7 +11,7 @@ const Cookies: React.FC = () => {
       />
       <Nav />
       <section className="py-12">
-        <div className="max-w-4xl mx-auto px-8 py-5 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+        <div className="max-w-4xl mx-auto px-8 py-5 bg-white dark:bg-gray-900 dark:text-white rounded-lg shadow-md">
           <h1 className="text-4xl my-5">Gestion des cookies</h1>
           <p className="mb-5">
             Ce site utilise uniquement des cookies de session et d&#8217;analyse de donnée de

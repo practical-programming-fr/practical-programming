@@ -24,6 +24,8 @@ import Rubriques from '../components/post/rubriques'
 import RelatedPost from '../components/post/relatedPost'
 import { useNextSanityImage } from 'next-sanity-image'
 
+import { useEffect } from 'react'
+
 const article = `*[_type == "post" && slug.current == $slug][0]
 {
   ..., 
@@ -103,7 +105,7 @@ const serializers = {
         <div>
           <Image {...imageProps} sizes="(max-width: 750) 100vw, 750px" />
           <p
-            className="font-thin text-center text-gray-800 dark:text-white"
+            className="font-thin text-center font-sans text-sm text-gray-800 dark:text-white"
             style={{ marginTop: 0 }}
           >
             {props.node.caption}
@@ -204,6 +206,16 @@ const BreadCrumbs: React.FC<any> = ({ post }) => {
 }
 
 const Post: React.FC<any> = ({ post, relatedPosts }) => {
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.src = 'https://rbbm.activehosted.com/f/embed.php?id=7'
+    script.async = true
+    script.type = 'text/javascript'
+    document.body.appendChild(script)
+    return () => {
+      document.body.removeChild(script)
+    }
+  }, [])
   return (
     <>
       <NextSeo
@@ -211,7 +223,7 @@ const Post: React.FC<any> = ({ post, relatedPosts }) => {
         description={post.metaDescription}
         canonical={`https://practicalprogramming.fr/${post.slug.current}`}
         openGraph={{
-          url: `https://practicalprogramming.fr/`,
+          url: `https://practicalprogramming.fr/${post.slug.current}`,
           locale: 'fr_FR',
           type: 'article',
           title: post.title,
@@ -249,7 +261,7 @@ const Post: React.FC<any> = ({ post, relatedPosts }) => {
         <div className="lg:flex lg:flex-wrap justify-center h-full">
           <div className="flex-1 max-w-3xl">
             <article className="px-8 py-8 bg-white dark:bg-gray-900">
-              <h1 className="text-3xl lg:text-5xl dark:text-white font-medium font-serif">
+              <h1 className="text-3xl lg:text-5xl dark:text-white font-medium font-sans">
                 {post.title}
               </h1>
               <ArticleJsonLd

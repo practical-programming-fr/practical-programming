@@ -11,7 +11,7 @@ module.exports = {
         },
         {
           source: '/lucas-roquilly',
-          destination: '/auteur/lucas-roquilly',
+          destination: '/author/lucas-roquilly',
           permanent: true,
         },
         {

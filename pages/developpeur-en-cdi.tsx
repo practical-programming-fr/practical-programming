@@ -19,7 +19,7 @@ const DeveloppeurEnCdi: React.FC = () => {
       <NextSeo
         title="Développeur en CDI: Le programme de coaching pour réussir sa reconversion"
         description="Trouver son premier CDI en tant que développeur après une reconversion est un challenge. Ce programme t'aide à le surmonter"
-        canonical="https://practicalprogramming.fr"
+        canonical="https://practicalprogramming.fr/developpeur-en-cdi"
         openGraph={{
           url: 'https://practicalprogramming.fr/developpeur-en-cdi',
           title: 'Développeur en CDI: Le programme de coaching pour réussir sa reconversion',
@@ -53,7 +53,6 @@ const DeveloppeurEnCdi: React.FC = () => {
       <Schedule />
       <Personae />
       <Testimonials />
-      <Warranty />
       <Pricing />
       <HardSell />
 

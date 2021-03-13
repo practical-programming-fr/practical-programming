@@ -151,7 +151,8 @@ const Faq: React.FC = () => {
                   </div>
                   <div>
                     <dt className="text-lg leading-6 font-medium text-gray-900">
-                      Que se passe-t-il si je ne suis pas satisfait du programme ?
+                      J'ai souscrit à l'abonnement à vie, que se passe-t-il si je ne suis pas
+                      satisfait du programme ?
                     </dt>
                     <dd className="mt-2 text-base text-gray-500">
                       Ta satisfaction dans ce programme est ma priorité. <br />
@@ -165,7 +166,7 @@ const Faq: React.FC = () => {
                     <dt className="text-lg leading-6 font-medium text-gray-900">
                       J'ai déjà des entretiens, est-ce que ce programme va m'aider ?
                     </dt>
-                    <dd className="mt-2 text-base text-gray-500">
+                    <dd className="my-2 text-base text-gray-500">
                       Si tu passes déjà des entretiens c'est une excellente nouvelle. Ca veut dire
                       que tu as réussi à rendre ton profil suffisamment attractif aux yeux des
                       employeurs pour qu'ils te consacrent du temps. Tu fais maintenant face au plus
@@ -173,11 +174,6 @@ const Faq: React.FC = () => {
                       méthodologies pour préparer et réussir tes entretiens. De plus, si tu es déjà
                       avancé et que ton profil est effectivement attractif auprès des employeurs,
                       nous pourrons utiliser l'heure de coaching pour te préparer à ces entretiens.
-                      <br /> <br />
-                      Si tu trouves ton emploi dans les 45j suivant ton inscription et que tu estime
-                      que le programme ne t'a pas aidé, tu pourras faire une demande de
-                      remboursement car tu es dans le cadre de la garantie 45jours.
-                      <br />
                     </dd>
                   </div>
                 </dl>

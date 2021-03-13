@@ -13,10 +13,6 @@ const Pricing: React.FC = () => {
                 <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl lg:text-5xl">
                   Prix
                 </h2>
-                <p className="mt-4 text-xl text-gray-600">
-                  Si tu n'es pas satisfait du programme, contacte moi dans les 45 jours suivant ton
-                  inscription et je te rembourse intégralement.
-                </p>
               </div>
             </div>
           </div>
@@ -27,7 +23,7 @@ const Pricing: React.FC = () => {
                 <div className="max-w-lg mx-auto rounded-lg shadow-lg overflow-hidden lg:max-w-none lg:flex">
                   <div className="flex-1 bg-white px-6 py-8 lg:p-12">
                     <h3 className="text-2xl font-extrabold text-gray-900 sm:text-3xl">
-                      Offre valable pour les 10 premiers inscrits
+                      Offre sans engagement
                     </h3>
                     <p className="mt-6 text-base text-gray-500">
                       Le programme d'accompagnement pour compléter ta reconversion et décrocher ton
@@ -96,25 +92,6 @@ const Pricing: React.FC = () => {
                               />
                             </svg>
                           </div>
-                          <p className="ml-3 text-sm text-gray-700">Une heure de coaching 1-on-1</p>
-                        </li>
-                        <li className="flex items-start lg:col-span-1">
-                          <div className="flex-shrink-0">
-                            {/* Heroicon name: solid/check-circle */}
-                            <svg
-                              className="h-5 w-5 text-green-400"
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                              aria-hidden="true"
-                            >
-                              <path
-                                fillRule="evenodd"
-                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                clipRule="evenodd"
-                              />
-                            </svg>
-                          </div>
                           <p className="ml-3 text-sm text-gray-700">
                             Suivi hebdomadaire de ta progression
                           </p>
@@ -138,27 +115,6 @@ const Pricing: React.FC = () => {
                           </div>
                           <p className="ml-3 text-sm text-gray-700">
                             Création de ta roadmap de progression
-                          </p>
-                        </li>
-                        <li className="flex items-start lg:col-span-1">
-                          <div className="flex-shrink-0">
-                            {/* Heroicon name: solid/check-circle */}
-                            <svg
-                              className="h-5 w-5 text-green-400"
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                              aria-hidden="true"
-                            >
-                              <path
-                                fillRule="evenodd"
-                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                clipRule="evenodd"
-                              />
-                            </svg>
-                          </div>
-                          <p className="ml-3 text-sm text-gray-700">
-                            Revue de ton CV et de ton profil Linkedin
                           </p>
                         </li>
                         <li className="flex items-start lg:col-span-1">
@@ -208,8 +164,9 @@ const Pricing: React.FC = () => {
                   </div>
                   <div className="py-8 px-6 text-center bg-gray-50 lg:flex-shrink-0 lg:flex lg:flex-col lg:justify-center lg:p-12">
                     <div className="mt-4 flex items-center justify-center text-5xl font-extrabold text-gray-900">
-                      <span>349€</span>
+                      <span>39€</span>
                     </div>
+                    <p className="text-lg pt-2 leading-6 font-medium text-gray-900">par mois</p>
                     <div className="mt-6">
                       <div className="rounded-md shadow">
                         <Link href="https://academy.practicalprogramming.fr/products/courses/view/1059090/?action=signup">
