@@ -2,4 +2,4 @@ Sitemap: https://practicalprogramming.fr/sitemap.xml
 
 
 User-agent: *
-Disallow:
+Disallow: /feedback/
