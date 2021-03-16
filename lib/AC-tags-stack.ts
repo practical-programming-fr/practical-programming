@@ -1,9 +1,9 @@
 const StackTags = {
-  javascript: '1',
-  php: '2',
-  java: '3',
-  python: '4',
-  ruby: '5',
+  javascript: '43',
+  php: '42',
+  java: '41',
+  python: '45',
+  ruby: '44',
 }
 
 export default StackTags

@@ -5,7 +5,6 @@ export default async function handler(req, res) {
   const userEmail = req.body.email
   if (req.method === 'POST') {
     const userIsVerified = await verifyUser(userId, userEmail)
-
     if (!userIsVerified) {
       res.status(400).end()
     }
