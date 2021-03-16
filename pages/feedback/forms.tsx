@@ -1,4 +1,5 @@
 import Nav from '../../components/nav'
+import axios from 'axios'
 import Footer from '../../components/footer'
 import { useRouter } from 'next/router'
 import { NextSeo } from 'next-seo'
@@ -7,16 +8,17 @@ import ACTags from '../../lib/AC-tags-stack'
 const Form1: React.FC = () => {
   const router = useRouter()
   const { id, email } = router.query
-  const registerUser = (event) => {
+  const registerUser = async (event) => {
     event.preventDefault() // don't redirect the page
     // where we'll add our form logic
     const techName = ['javascript', 'php', 'java', 'python', 'ruby']
+    const tags = []
     for (const tech of techName) {
       if (event.target[tech].checked) {
-        console.log(ACTags[tech])
+        tags.push(ACTags[tech])
       }
     }
-    console.log(id, email)
+    await axios.post('http://localhost:3000/api/students', { email, id, tags })
   }
   return (
     <div>
