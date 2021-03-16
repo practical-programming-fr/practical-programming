@@ -18,7 +18,7 @@ const Form1: React.FC = () => {
         tags.push(ACTags[tech])
       }
     }
-    await axios.post('http://localhost:3000/api/forms', { email, id, tags })
+    await axios.post(`${process.env.NEXT_PUBLIC_URL}/api/forms`, { email, id, tags })
     router.push('/')
   }
   return (
