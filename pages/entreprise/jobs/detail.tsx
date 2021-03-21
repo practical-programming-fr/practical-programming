@@ -12,7 +12,7 @@ import TechChallenges from '../../components/company/techChallenges'
 import OurOpinion from '../../components/company/ourOpinion'
 import CompanyJobs from '../../components/company/companyJobs'
 
-const Entreprise: React.FC = ({ company }) => {
+const JobDetail: React.FC = ({ company }) => {
   return (
     <>
       <NextSeo
@@ -54,4 +54,4 @@ const Entreprise: React.FC = ({ company }) => {
   )
 }
 
-export default Entreprise
+export default JobDetail

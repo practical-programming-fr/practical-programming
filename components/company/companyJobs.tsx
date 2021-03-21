@@ -1,9 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import JobListing from './jobListing'
 
-const TechChallenges: React.FC = () => {
+const CompanyJobs: React.FC = () => {
   return (
-    <div className="relative bg-white overflow-hidden">
+    <div className="relative bg-gray-50 overflow-hidden">
       <div className="hidden lg:block lg:absolute lg:inset-y-0 lg:h-full lg:w-full">
         <div className="relative h-full text-lg max-w-prose mx-auto" aria-hidden="true">
           <svg
@@ -92,25 +93,20 @@ const TechChallenges: React.FC = () => {
           </svg>
         </div>
       </div>
-      <div className="relative px-4 sm:px-6 lg:px-8 py-8">
-        <div className="prose prose-indigo prose-lg text-gray-500 mx-auto">
-          <h2>Les challenges à venir</h2>
-          <p>
-            Purus morbi dignissim senectus mattis <a href="#">adipiscing</a>. Amet, massa quam
-            varius orci dapibus volutpat cras. In amet eu ridiculus leo sodales cursus tristique.
-            Tincidunt sed tempus ut viverra ridiculus non molestie. Gravida quis fringilla amet eget
-            dui tempor dignissim. Facilisis auctor venenatis varius nunc, congue erat ac. Cras
-            fermentum convallis quam.
-          </p>
-          <p>
-            Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris
-            semper sed amet vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus
-            viverra tellus varius sit neque erat velit.
-          </p>
+      <div className="relative px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto py-12 px-4 max-w-4xl sm:px-6 lg:px-8 lg:py-12 text-gray-500">
+          <h2 className="text-3xl font-bold text-gray-900 mb-12">Les Jobs de dev chez Shine</h2>
+          <JobListing />
+          <JobListing />
+          <JobListing />
+          <JobListing />
+          <JobListing />
+          <JobListing />
+          <JobListing />
         </div>
       </div>
     </div>
   )
 }
 
-export default TechChallenges
+export default CompanyJobs

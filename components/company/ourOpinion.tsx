@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const OurOpinion: React.FC = () => {
   return (
-    <div className="bg-white pt-16 lg:py-24">
+    <div className="bg-gray-50 pt-16 lg:py-24">
       <div className="pb-16 bg-blue-600 lg:pb-0 lg:z-10 lg:relative">
         <div className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-3 lg:gap-8">
           <div className="relative lg:-my-8">
@@ -42,10 +42,10 @@ const OurOpinion: React.FC = () => {
                     scaleups
                   </p>
                 </div>
-                <footer className="mt-6">
+                <div className="mt-6">
                   <p className="text-base font-medium text-white">Rayed Benbrahim</p>
                   <p className="text-base font-medium text-blue-100">Practical Programming</p>
-                </footer>
+                </div>
               </blockquote>
             </div>
           </div>
