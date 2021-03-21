@@ -26,7 +26,7 @@ const Form1: React.FC = () => {
       <NextSeo
         title="Formulaire 1"
         description="Dans le cadre du programme développeur en CDI"
-        nofollow={true}
+        nofollow={false}
         noindex={true}
       />
       <Nav />

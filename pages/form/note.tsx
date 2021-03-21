@@ -29,7 +29,7 @@ const Form2: React.FC = () => {
       <NextSeo
         title="Ajouter une note"
         description="Dans le cadre du programme développeur en CDI"
-        nofollow={true}
+        nofollow={false}
         noindex={true}
       />
       <Nav />
