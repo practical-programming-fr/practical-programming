@@ -13,7 +13,6 @@ const JobsPage: React.FC<any> = () => {
       />
       <div>
         <Nav />
-        <JobsHero />
         <JobsList />
         <Footer />
       </div>

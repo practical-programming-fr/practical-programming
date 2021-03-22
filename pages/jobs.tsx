@@ -5,7 +5,6 @@ import Section from '../components/section'
 import sanity from '../lib/sanity'
 import { NextSeo } from 'next-seo'
 import JobsHero from '../components/jobs/jobsHero'
-import JobsList from '../components/jobs/jobslist'
 
 const JobsPage: React.FC<any> = () => {
   return (
@@ -17,7 +16,6 @@ const JobsPage: React.FC<any> = () => {
       <div>
         <Nav />
         <JobsHero />
-        <JobsList />
         <Footer />
       </div>
     </>
