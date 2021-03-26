@@ -1,7 +1,7 @@
 import Nav from '../components/nav'
 import Footer from '../components/footer'
 import { NextSeo } from 'next-seo'
-import JobsHero from '../components/jobs/jobsHero'
+import JobHero from '../components/jobDetail/jobHero'
 import JobsList from '../components/jobs/jobslist'
 
 const JobsPage: React.FC<any> = () => {
@@ -13,7 +13,7 @@ const JobsPage: React.FC<any> = () => {
       />
       <div>
         <Nav />
-        <JobsList />
+        <JobHero />
         <Footer />
       </div>
     </>
