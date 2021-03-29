@@ -3,7 +3,7 @@
   }
   
   .markdown p {
-    @apply font-serif my-6
+    @apply font-sans my-6 font-light
   }
 
   .markdown ul,
@@ -21,7 +21,7 @@
   }
 
   .markdown a {
-    @apply underline text-blue-500;
+    @apply underline font-medium leading-loose text-blue-500;
   }
   
   .markdown ul {
@@ -33,4 +33,12 @@
   }
   .markdown li {
     @apply mt-2
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .markdown a {
+      @apply underline;
+      color: #BA6051
+    }
+    
   }

@@ -5,7 +5,7 @@ export default function Nav() {
   const [responsiveMenuisOpen, setResponsiveMenu] = useState(false)
   return (
     <>
-      <nav className="bg-white dark:bg-gray-900 border-b">
+      <nav className="bg-white dark:bg-nav-gray border-b dark:border-nav-gray">
         <div className="max-w-7xl mx-auto px-2">
           <div className="relative flex items-center justify-between h-20">
             <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">

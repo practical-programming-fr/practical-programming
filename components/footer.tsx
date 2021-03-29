@@ -3,7 +3,7 @@ import Link from 'next/link'
 const Footer: React.FC = () => {
   return (
     <>
-      <footer className="z-10 relative text-gray-600 body-font bg-gray-100 dark:bg-gray-900">
+      <footer className="z-10 relative text-gray-600 body-font bg-gray-100 dark:bg-dark-gray">
         <div className="container px-5 py-10 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
           <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
             <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900 dark:text-gray-200">
@@ -137,21 +137,21 @@ const Footer: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="bg-gray-100 dark:bg-gray-900">
-          <div className="container mx-auto pb-2 px-5 flex flex-wrap flex-col sm:flex-row">
-            <p className="text-gray-500 dark:text-gray-200 text-sm text-center sm:text-left">
+        <div className="bg-gray-100 dark:bg-nav-gray">
+          <div className="container mx-auto pb-2 px-5 pt-2 flex flex-wrap flex-col sm:flex-row">
+            <p className="text-gray-500 dark:dark-text text-sm text-center sm:text-left">
               © 2020 Practical Programming —
               <a
                 href="https://twitter.com/rayedbenbrahim"
                 rel="noopener noreferrer"
-                className="text-gray-600 dark:text-gray-200 ml-1"
+                className="text-gray-600 dark:dark-text ml-1"
                 target="_blank"
               >
                 @rayedbenbrahim
               </a>
             </p>
             <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
-              <a className="text-gray-500 dark:text-gray-200">
+              <a className="text-gray-500 dark:dark-text">
                 <svg
                   fill="currentColor"
                   strokeLinecap="round"

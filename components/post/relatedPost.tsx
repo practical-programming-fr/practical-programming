@@ -6,9 +6,9 @@ const RelatedPost: React.FC<any> = ({ relatedPosts, category, slug }) => {
     return null
   }
   return (
-    <aside className="px-8 pt-8 bg-white dark:bg-gray-800 rounded-lg">
+    <aside className="px-8 pt-8 bg-white dark:bg-light-gray rounded-lg pb-2">
       <Link href={`/category/${slug}/`}>
-        <a className="tracking-widest text-md title-font font-medium text-blue-500 mb-3 uppercase cursor-pointer">
+        <a className="tracking-widest text-md title-font font-medium text-orange-link mb-3 uppercase cursor-pointer">
           {category}
         </a>
       </Link>
@@ -23,7 +23,7 @@ const RelatedPost: React.FC<any> = ({ relatedPosts, category, slug }) => {
               </Link>
               <Link href={relatedPost.slug.current}>
                 <a>
-                  <p className="text-gray-600 dark:text-gray-300 font-light text-lg pt-2">
+                  <p className="text-gray-600 dark:text-brand font-light text-lg pt-2">
                     {relatedPost.excerpt}
                   </p>
                 </a>
@@ -53,7 +53,6 @@ const RelatedPost: React.FC<any> = ({ relatedPosts, category, slug }) => {
           </a>
         </Link>
       </div>
-      <hr />
     </aside>
   )
 }

@@ -14,7 +14,7 @@ const Summary: React.FC<any> = ({ post }) => {
   return (
     <>
       {/* This example requires Tailwind CSS v2.0+ */}
-      <div className="bg-gray-50 dark:bg-gray-800 my-8 rounded-lg">
+      <div className="bg-gray-50 dark:bg-light-gray my-8 rounded-lg">
         <div className="max-w-7xl mx-auto py-12 px-4 sm:py-8 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto divide-y-2 divide-gray-200">
             <h4 className="text-center font-extrabold text-gray-900 dark:text-gray-200 sm:text-xl">

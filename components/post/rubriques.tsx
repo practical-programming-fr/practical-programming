@@ -8,9 +8,9 @@ const Rubriques: React.FC<any> = ({ post }) => {
       <>
         <>
           {/* This example requires Tailwind CSS v2.0+ */}
-          <div className="relative bg-gray-50 dark:bg-gray-800 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8 rounded-lg">
+          <div className="relative bg-gray-50 dark:bg-light-gray pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8 rounded-lg">
             <div className="absolute inset-0">
-              <div className="bg-white dark:bg-gray-800 rounded-lg h-1/3 sm:h-2/3" />
+              <div className="bg-white dark:bg-light-gray rounded-lg h-1/3 sm:h-2/3" />
             </div>
             <div className="relative max-w-7xl mx-auto">
               <div className="text-center">
