@@ -261,7 +261,7 @@ const Post: React.FC<any> = ({ post, relatedPosts }) => {
         <div className="lg:flex lg:flex-wrap justify-center h-full">
           <div className="flex-1 max-w-3xl">
             <article className="px-8 py-8 bg-white dark:bg-dark-gray">
-              <h1 className="text-3xl lg:text-5xl dark:dark-white dark:text-white font-medium font-sans">
+              <h1 className="text-3xl lg:text-5xl dark:dark-white dark:text-white font-bold font-sans">
                 {post.title}
               </h1>
               <ArticleJsonLd
