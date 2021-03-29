@@ -30,7 +30,7 @@ const Section: React.FC<SectionProps> = ({ posts, title }) => {
                   <div className="p-6">
                     <Link href={`/${post.slug.current}`}>
                       <a>
-                        <h2 className="title-font font-bold text-lg text-gray-900 dark:text-white mb-3 uppercase hover:underline dark:hover:text-gray-100">
+                        <h2 className="title-font font-bold text-lg text-gray-900 dark:text-white mb-3 uppercase hover:underline dark:hover:text-orange-link">
                           {post.title}
                         </h2>
                       </a>
