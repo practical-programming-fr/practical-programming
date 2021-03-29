@@ -6,9 +6,9 @@ const RelatedPost: React.FC<any> = ({ relatedPosts, category, slug }) => {
     return null
   }
   return (
-    <aside className="px-8 pt-8 bg-white dark:bg-gray-800 rounded-lg">
+    <aside className="px-8 pt-8 bg-white dark:bg-light-gray rounded-lg pb-2">
       <Link href={`/category/${slug}/`}>
-        <a className="tracking-widest text-md title-font font-medium text-blue-500 mb-3 uppercase cursor-pointer">
+        <a className="tracking-widest text-md title-font font-medium text-orange-link mb-3 uppercase cursor-pointer">
           {category}
         </a>
       </Link>
@@ -17,13 +17,13 @@ const RelatedPost: React.FC<any> = ({ relatedPosts, category, slug }) => {
           <>
             <div className="w-full p-4 relative" key={relatedPost.slug.current}>
               <Link href={relatedPost.slug.current}>
-                <a className="text-gray-800 dark:text-white text-xl font-medium mb-2">
+                <a className="text-gray-800 dark:text-white text-2xl font-bold mb-2">
                   {relatedPost.title}
                 </a>
               </Link>
               <Link href={relatedPost.slug.current}>
                 <a>
-                  <p className="text-gray-600 dark:text-gray-300 font-light text-lg pt-2">
+                  <p className="text-gray-600 dark:text-brand font-light text-lg pt-2">
                     {relatedPost.excerpt}
                   </p>
                 </a>
@@ -35,7 +35,7 @@ const RelatedPost: React.FC<any> = ({ relatedPosts, category, slug }) => {
       })}
       <div className="w-full my-4 p-4 bg-blue-200 rounded-lg">
         <Link href="/developpeur-en-cdi">
-          <a className="text-blue-900 text-xl font-medium mb-2">
+          <a className="text-blue-900 text-2xl font-bold mb-2">
             Trouver un CDI après une reconversion
           </a>
         </Link>
@@ -53,7 +53,6 @@ const RelatedPost: React.FC<any> = ({ relatedPosts, category, slug }) => {
           </a>
         </Link>
       </div>
-      <hr />
     </aside>
   )
 }

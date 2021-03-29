@@ -257,11 +257,11 @@ const Post: React.FC<any> = ({ post, relatedPosts }) => {
         ]}
       />
       <Nav />
-      <section className="bg-white dark:bg-gray-900 dark:text-gray-200">
+      <section className="bg-white dark:bg-dark-gray dark:text-brand">
         <div className="lg:flex lg:flex-wrap justify-center h-full">
           <div className="flex-1 max-w-3xl">
-            <article className="px-8 py-8 bg-white dark:bg-gray-900">
-              <h1 className="text-3xl lg:text-5xl dark:text-white font-medium font-sans">
+            <article className="px-8 py-8 bg-white dark:bg-dark-gray">
+              <h1 className="text-3xl lg:text-5xl dark:dark-white dark:text-white font-bold font-sans">
                 {post.title}
               </h1>
               <ArticleJsonLd
@@ -287,12 +287,12 @@ const Post: React.FC<any> = ({ post, relatedPosts }) => {
 
                 <div className="mx-4 mt-4 flex flex-col">
                   <Link href={`/author/${post.author.slug.current}`}>
-                    <a className="text-gray-800 dark:text-gray-100 text-lg leading-7 font-medium space-y-1">
+                    <a className="text-gray-800 dark:text-brand text-lg leading-7 font-medium space-y-1">
                       {post.author.name}
                     </a>
                   </Link>
-                  <p className="text-blue-700 dark:text-gray-100 -mt-2 leading-7 font-medium">
-                    {dayjs(post.publishedAt).locale('fr').format('D MMMM YYYY')}
+                  <p className="text-blue-700 text-sm dark:text-brand -mt-2 leading-7 font-thin">
+                    Publié le {dayjs(post.publishedAt).locale('fr').format('D MMMM YYYY')}
                   </p>
                 </div>
               </div>

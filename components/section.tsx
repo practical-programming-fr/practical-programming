@@ -9,7 +9,7 @@ interface SectionProps {
 
 const Section: React.FC<SectionProps> = ({ posts, title }) => {
   return (
-    <section className="text-gray-600 body-font">
+    <section className="text-gray-600 body-font dark:bg-dark-gray">
       <div className="container px-5 py-6 mx-auto lg:max-w-5xl">
         <h2 className="sm:text-2xl dark:text-white text-xl title-font font-medium text-gray-900 mb-8">
           {title}
@@ -19,7 +19,7 @@ const Section: React.FC<SectionProps> = ({ posts, title }) => {
           {posts.map((post) => {
             return (
               <div className="p-4 md:w-1/2" key={post._id}>
-                <div className="h-full border-2 border-gray-200 dark: border-gray-800 border-opacity-60 rounded-lg overflow-hidden">
+                <div className="h-full border-2 border-gray-200 dark:bg-light-gray dark:text-brand border-light-gray border-opacity-60 rounded-lg overflow-hidden dark:hover:border-brand">
                   <Image
                     className="lg:h-72 md:h-36 w-full object-cover object-center"
                     src={`${post.thumbnail}`}
@@ -30,15 +30,15 @@ const Section: React.FC<SectionProps> = ({ posts, title }) => {
                   <div className="p-6">
                     <Link href={`/${post.slug.current}`}>
                       <a>
-                        <h2 className="title-font font-bold text-lg text-gray-900 dark:text-gray-300 mb-3 uppercase hover:underline dark:hover:text-gray-100">
+                        <h2 className="title-font font-bold text-lg text-gray-900 dark:text-white mb-3 uppercase hover:underline dark:hover:text-orange-link">
                           {post.title}
                         </h2>
                       </a>
                     </Link>
-                    <p className="dark:text-gray-400 leading-relaxed mb-3">{post.excerpt}</p>
+                    <p className="dark:text-brand leading-relaxed mb-3">{post.excerpt}</p>
                     <div className="flex items-center flex-wrap ">
                       <Link href={`/${post.slug.current}`}>
-                        <a className="text-blue-500 inline-flex items-center md:mb-2 lg:mb-0 hover:underline">
+                        <a className="text-blue-500 inline-flex items-center md:mb-2 lg:mb-0 hover:underline dark:text-orange-link font-bold">
                           Lire la suite
                           <svg
                             className="w-4 h-4 ml-2"
