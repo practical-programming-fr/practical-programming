@@ -17,7 +17,7 @@ const RelatedPost: React.FC<any> = ({ relatedPosts, category, slug }) => {
           <>
             <div className="w-full p-4 relative" key={relatedPost.slug.current}>
               <Link href={relatedPost.slug.current}>
-                <a className="text-gray-800 dark:text-white text-xl font-medium mb-2">
+                <a className="text-gray-800 dark:text-white text-2xl font-bold mb-2">
                   {relatedPost.title}
                 </a>
               </Link>
@@ -35,7 +35,7 @@ const RelatedPost: React.FC<any> = ({ relatedPosts, category, slug }) => {
       })}
       <div className="w-full my-4 p-4 bg-blue-200 rounded-lg">
         <Link href="/developpeur-en-cdi">
-          <a className="text-blue-900 text-xl font-medium mb-2">
+          <a className="text-blue-900 text-2xl font-bold mb-2">
             Trouver un CDI après une reconversion
           </a>
         </Link>
