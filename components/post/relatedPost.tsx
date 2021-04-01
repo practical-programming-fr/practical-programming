@@ -8,7 +8,7 @@ const RelatedPost: React.FC<any> = ({ relatedPosts, category, slug }) => {
   return (
     <aside className="px-8 pt-8 bg-white dark:bg-light-gray rounded-lg pb-2">
       <Link href={`/category/${slug}/`}>
-        <a className="tracking-widest text-md title-font font-medium text-orange-link mb-3 uppercase cursor-pointer">
+        <a className="tracking-widest text-md title-font font-medium text-blue-600 dark:text-orange-link mb-3 uppercase cursor-pointer">
           {category}
         </a>
       </Link>

@@ -25,6 +25,7 @@ import RelatedPost from '../components/post/relatedPost'
 import { useNextSanityImage } from 'next-sanity-image'
 
 import { useEffect } from 'react'
+import CardLink from '../components/post/cardLink'
 
 const article = `*[_type == "post" && slug.current == $slug][0]
 {
@@ -264,6 +265,7 @@ const Post: React.FC<any> = ({ post, relatedPosts }) => {
               <h1 className="text-3xl lg:text-5xl dark:dark-white dark:text-white font-bold font-sans">
                 {post.title}
               </h1>
+              <CardLink />
               <ArticleJsonLd
                 url={`https://practicalprogramming.fr/${post.slug.current}`}
                 title={post.title}
