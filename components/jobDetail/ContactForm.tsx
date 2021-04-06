@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 import axios from 'axios'
-const ContactForm: React.FC = () => {
+const ContactForm: React.FC<any> = () => {
   const router = useRouter()
   const { opportunity } = router.query
   const [consent, setConsent] = useState(false)
@@ -17,7 +17,6 @@ const ContactForm: React.FC = () => {
   const toggleConsent = (): void => setConsent(!consent)
   const sendForm = async (event) => {
     event.preventDefault()
-    console.log(contact)
     await axios.post(`${process.env.NEXT_PUBLIC_URL}/api/opportunity`, contact)
     router.push('/')
   }

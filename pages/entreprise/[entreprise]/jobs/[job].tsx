@@ -1,24 +1,24 @@
-import Nav from '../../components/nav'
-import Footer from '../../components/footer'
+import Nav from '../../../../components/nav'
+import Footer from '../../../../components/footer'
 import { NextSeo, JobPostingJsonLd } from 'next-seo'
-import sanity from '../../lib/sanity'
-import JobDescription from '../../components/jobDetail/JobDescription'
+import sanity from '../../../../lib/sanity'
+import JobDescription from '../../../../components/jobDetail/JobDescription'
 import { GetStaticProps, GetStaticPaths } from 'next'
-import ContactForm from '../../components/jobDetail/ContactForm'
-import ContactMe from '../../components/jobDetail/ContactMe'
+import ContactForm from '../../../../components/jobDetail/ContactForm'
 import dayjs from 'dayjs'
 
-const JobsPage: React.FC<any> = ({ opportunity }) => {
+const JobsPage: React.FC<any> = ({ job }) => {
+  console.log(job)
   return (
     <>
       <NextSeo
-        title={`Opportunité: ${opportunity.position}`}
-        description={opportunity.excerpt}
-        canonical={`https://practicalprogramming.fr/opportunite/${opportunity.slug.current}`}
+        title={`Opportunité: ${job.position}`}
+        description={job.excerpt}
+        canonical={`https://practicalprogramming.fr/opportunite/${job.slug.current}`}
         openGraph={{
-          url: `https://practicalprogramming.fr/opportunite/${opportunity.slug.current}`,
-          title: `Opportunité: ${opportunity.position}`,
-          description: opportunity.excerpt,
+          url: `https://practicalprogramming.fr/opportunite/${job.slug.current}`,
+          title: `Opportunité: ${job.position}`,
+          description: job.excerpt,
           locale: 'fr_FR',
           type: 'article',
           images: [
@@ -46,8 +46,8 @@ const JobsPage: React.FC<any> = ({ opportunity }) => {
         }}
       />
       <JobPostingJsonLd
-        datePosted={opportunity.publishedAt}
-        description={opportunity.excerpt}
+        datePosted={job.publishedAt}
+        description={job.excerpt}
         hiringOrganization={{
           name: 'Practical Programming',
           sameAs: 'https://practicalprogramming.fr',
@@ -59,7 +59,7 @@ const JobsPage: React.FC<any> = ({ opportunity }) => {
           postalCode: '75008',
           addressCountry: 'France',
         }}
-        title={opportunity.position}
+        title={job.position}
         baseSalary={{
           currency: 'EUR',
           value: 5000,
@@ -67,14 +67,14 @@ const JobsPage: React.FC<any> = ({ opportunity }) => {
         }}
         employmentType="FULL_TIME"
         jobLocationType="TELECOMMUTE"
-        validThrough={dayjs(opportunity.publishedAt).add(60, 'day').toISOString()}
+        validThrough={dayjs(job.publishedAt).add(60, 'day').toISOString()}
         applicantLocationRequirements="FR"
       />
       <div>
         <Nav />
-        <JobDescription opportunity={opportunity} />
+        <JobDescription opportunity={job} />
         <ContactForm />
-        <ContactMe author={opportunity.author} />
+        {/* <ContactMe author={job.author} /> */}
         <Footer />
       </div>
     </>
@@ -82,18 +82,21 @@ const JobsPage: React.FC<any> = ({ opportunity }) => {
 }
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
-  const slug = ctx.params.opportunity
+  const companySlug = ctx.params.entreprise
+  const jobSlug = ctx.params.job
 
-  const jobQuery = `*[_type == "job" && slug.current=="${slug}"][0]{...,author->{name,linkedin,"url":image.asset->url}}`
-  const opportunity = await sanity.fetch(jobQuery, { slug })
-  return { props: { opportunity } }
+  const jobQuery = `*[_type == "job" && slug.current=="${jobSlug}" && hiringCompany._ref in *[_type=="company" && slug.current=="${companySlug}"]._id][0]{...,author->{name,linkedin,"url":image.asset->url}}`
+  const job = await sanity.fetch(jobQuery, { companySlug, jobSlug })
+  return { props: { job } }
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const getJobs = `*[_type == "job" && hiringCompany._ref =="59d00fa9-6b14-446e-8b57-4b0e2cc1b7b6"]{slug}`
+  const getJobs = `*[_type == "job" && hiringCompany._ref !="59d00fa9-6b14-446e-8b57-4b0e2cc1b7b6"]{slug,hiringCompany->{slug}}`
   const jobs = await sanity.fetch(getJobs)
-  const paths = jobs.map((job) => {
-    return { params: { opportunity: job.slug.current } }
+  const paths = jobs.map((listedJob) => {
+    return {
+      params: { entreprise: listedJob.hiringCompany.slug.current, job: listedJob.slug.current },
+    }
   })
   return {
     paths,

@@ -141,7 +141,11 @@ const serializers = {
       overrides[props.node.style]
         ? overrides[props.node.style]({ children: props.children })
         : BlockContent.defaultSerializers.types.block(props),
+    cardLink: function cardLink({ node }) {
+      return <CardLink props={node} />
+    },
   },
+
   marks: {
     internalLink: function linkSerializer({ mark, children }) {
       const { slug = {} } = mark
@@ -228,7 +232,7 @@ const Post: React.FC<any> = ({ post, relatedPosts }) => {
           locale: 'fr_FR',
           type: 'article',
           title: post.title,
-          description: 'Description du post',
+          description: post.metaDescription,
           images: [
             {
               url: urlFor(post.mainImage.asset._ref).url(),
@@ -265,7 +269,6 @@ const Post: React.FC<any> = ({ post, relatedPosts }) => {
               <h1 className="text-3xl lg:text-5xl dark:dark-white dark:text-white font-bold font-sans">
                 {post.title}
               </h1>
-              <CardLink />
               <ArticleJsonLd
                 url={`https://practicalprogramming.fr/${post.slug.current}`}
                 title={post.title}

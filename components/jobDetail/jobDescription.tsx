@@ -80,7 +80,7 @@ const serializers = {
   },
 }
 
-const JobDescription: React.FC = ({ opportunity }) => {
+const JobDescription: React.FC<any> = ({ opportunity }) => {
   return (
     <div className="relative py-16 bg-white dark:bg-dark-gray overflow-hidden pb-4">
       <div className="hidden lg:block lg:absolute lg:inset-y-0 lg:h-full lg:w-full">

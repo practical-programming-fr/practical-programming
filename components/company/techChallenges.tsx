@@ -1,11 +1,92 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import BlockContent from '@sanity/block-content-to-react'
+import markdownStyles from '../../pages/markdown-styles.module.css'
+import { useNextSanityImage } from 'next-sanity-image'
+import sanity from '../../lib/sanity'
+import YouTube from 'react-youtube'
 
-const TechChallenges: React.FC = () => {
+const H2 = ({ children }) => (
+  <h2 className="text-3xl font-extrabold tracking-wider dark:text-white">{children}</h2>
+)
+const H3 = ({ children }) => (
+  <h3 className="text-3xl font-extrabold tracking-wider dark:text-white">{children}</h3>
+)
+const overrides = {
+  h2: function h2override(props) {
+    return H2(props)
+  },
+  h3: function h3override(props) {
+    return H3(props)
+  },
+}
+const serializers = {
+  types: {
+    block: (props) =>
+      overrides[props.node.style]
+        ? overrides[props.node.style]({ children: props.children })
+        : BlockContent.defaultSerializers.types.block(props),
+    image: function imageSerializer(props) {
+      // eslint-disable-next-line react-hooks/rules-of-hooks
+      const imageProps = useNextSanityImage(sanity, props.node)
+
+      return (
+        <div className="w-full rounded-lg">
+          <Image {...imageProps} sizes="(max-width: 750) 100vw, 750px" />
+        </div>
+      )
+    },
+    youtube: function youTubeSerializer({ node }) {
+      const { url } = node
+      const id = getYouTubeId(url)
+      return <YouTube videoId={id} className="w-full" />
+    },
+    table: function tableSerializer(props) {
+      return (
+        <table className="table-auto">
+          {props.node.rows.map((row) => {
+            return (
+              <tr key={row._key}>
+                {row.cells.map((cell) => (
+                  <td key={cell} className="border px-2 font-thin">
+                    {cell}
+                  </td>
+                ))}
+              </tr>
+            )
+          })}
+        </table>
+      )
+    },
+  },
+  marks: {
+    internalLink: function linkSerializer({ mark, children }) {
+      const { slug = {} } = mark
+      const href = `/${slug.current}/`
+      return (
+        <Link href={href}>
+          <a>{children}</a>
+        </Link>
+      )
+    },
+    highlight: function highlightBlock({ children }) {
+      return (
+        <div className="p-6 bg-blue-50 rounded-md">
+          <p className="text-blue-900">{children}</p>
+        </div>
+      )
+    },
+  },
+}
+
+const TechChallenges: React.FC<any> = ({ challenges }) => {
   return (
-    <div className="relative bg-white overflow-hidden">
+    <div className="relative bg-white dark:bg-light-gray overflow-hidden">
       <div className="hidden lg:block lg:absolute lg:inset-y-0 lg:h-full lg:w-full">
-        <div className="relative h-full text-lg max-w-prose mx-auto" aria-hidden="true">
+        <div
+          className="relative h-full text-lg max-w-4xl mx-auto dark:text-brand"
+          aria-hidden="true"
+        >
           <svg
             className="absolute top-12 left-full transform translate-x-32"
             width={404}
@@ -88,25 +169,16 @@ const TechChallenges: React.FC = () => {
                 />
               </pattern>
             </defs>
-            <rect width={404} height={384} fill="url(#d3eb07ae-5182-43e6-857d-35c643af9034)" />
           </svg>
         </div>
       </div>
       <div className="relative px-4 sm:px-6 lg:px-8 py-8">
-        <div className="prose prose-indigo prose-lg text-gray-500 mx-auto">
-          <h2>Les challenges à venir</h2>
-          <p>
-            Purus morbi dignissim senectus mattis <a href="#">adipiscing</a>. Amet, massa quam
-            varius orci dapibus volutpat cras. In amet eu ridiculus leo sodales cursus tristique.
-            Tincidunt sed tempus ut viverra ridiculus non molestie. Gravida quis fringilla amet eget
-            dui tempor dignissim. Facilisis auctor venenatis varius nunc, congue erat ac. Cras
-            fermentum convallis quam.
-          </p>
-          <p>
-            Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris
-            semper sed amet vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus
-            viverra tellus varius sit neque erat velit.
-          </p>
+        <div className="max-w-4xl text-gray-500 dark:text-brand mx-auto">
+          <BlockContent
+            blocks={challenges}
+            className={markdownStyles.markdown}
+            serializers={serializers}
+          />
         </div>
       </div>
     </div>

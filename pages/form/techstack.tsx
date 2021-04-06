@@ -9,8 +9,7 @@ const Form1: React.FC = () => {
   const router = useRouter()
   const { id, email } = router.query
   const registerUser = async (event) => {
-    event.preventDefault() // don't redirect the page
-    // where we'll add our form logic
+    event.preventDefault()
     const techName = ['javascript', 'php', 'java', 'python', 'ruby']
     const tags = []
     for (const tech of techName) {
