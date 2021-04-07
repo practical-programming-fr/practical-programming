@@ -14,6 +14,7 @@ import CompanyJobs from '../../components/company/companyJobs'
 
 const entrepriseQuery = `*[_type == "company" && slug.current==$slug][0]{
 	...,
+  "logo":logo.asset->url,
   "jobs": *[_type == "job" && hiringCompany._ref == ^._id]
 }`
 
