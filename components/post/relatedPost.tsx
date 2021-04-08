@@ -1,7 +1,6 @@
 import Link from 'next/link'
 
 const RelatedPost: React.FC<any> = ({ relatedPosts, category, slug }) => {
-  console.log()
   if (relatedPosts.length < 1) {
     return null
   }

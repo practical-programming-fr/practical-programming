@@ -2,7 +2,7 @@ import Nav from '../../../../components/nav'
 import Footer from '../../../../components/footer'
 import { NextSeo, JobPostingJsonLd } from 'next-seo'
 import sanity from '../../../../lib/sanity'
-import JobDescription from '../../../../components/jobDetail/JobDescription'
+import JobDescription from '../../../../components/jobDetail/jobDescription'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import ContactForm from '../../../../components/jobDetail/ContactForm'
 import dayjs from 'dayjs'
@@ -91,7 +91,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const getJobs = `*[_type == "job" && hiringCompany._ref !="59d00fa9-6b14-446e-8b57-4b0e2cc1b7b6"]{slug,hiringCompany->{slug}}`
+  const getJobs = `*[_type == "job" && published == true && hiringCompany._ref !="59d00fa9-6b14-446e-8b57-4b0e2cc1b7b6"]{slug,hiringCompany->{slug}}`
   const jobs = await sanity.fetch(getJobs)
   const paths = jobs.map((listedJob) => {
     return {

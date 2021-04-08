@@ -3,7 +3,6 @@ import { verifyUser } from './user'
 
 export default async function handler(req, res) {
   const { id, email, message, prefix } = req.body
-  console.log(id, email, message)
   if (req.method === 'POST') {
     const userIsVerified = await verifyUser(id, email)
     if (!userIsVerified) {

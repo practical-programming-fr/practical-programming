@@ -12,18 +12,24 @@ import TechChallenges from '../../components/company/techChallenges'
 import OurOpinion from '../../components/company/ourOpinion'
 import CompanyJobs from '../../components/company/companyJobs'
 
-const entrepriseQuery = `*[_type == "company" && slug.current==$slug][0]{
+const entrepriseQuery = `*[_type == "company" && slug.current==$slug && published==true][0]{
 	...,
   "logo":logo.asset->url,
-  "jobs": *[_type == "job" && hiringCompany._ref == ^._id]
+  "jobs": *[_type == "job" && hiringCompany._ref == ^._id]{
+    ...,
+    hiringCompany->{
+      name,
+      "slug":slug.current
+    }
+  }
 }`
 
 const Entreprise: React.FC<any> = ({ entreprise }) => {
   return (
     <>
       <NextSeo
-        title={`Archives des articles  - Practical Programming`}
-        description="description"
+        title={`${entreprise.name} recherche des développeurs`}
+        description={entreprise.excerpt}
         canonical={`https://practicalprogramming.fr/company/`}
         openGraph={{
           url: `https://practicalprogramming.fr/category/`,
