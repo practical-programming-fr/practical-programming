@@ -334,7 +334,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const getPosts = `*[_type == "post" && published == true]{slug}`
+  const getPosts = `*[_type == "post"]{slug}`
   const posts = await sanity.fetch(getPosts)
   const paths = posts.map((post) => {
     return { params: { post: post.slug.current } }

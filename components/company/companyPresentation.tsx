@@ -5,6 +5,7 @@ import markdownStyles from '../../pages/markdown-styles.module.css'
 import { useNextSanityImage } from 'next-sanity-image'
 import sanity from '../../lib/sanity'
 import YouTube from 'react-youtube'
+import getYouTubeId from 'get-youtube-id'
 
 const H2 = ({ children }) => (
   <h2 className="text-3xl font-extrabold tracking-wider dark:text-white">{children}</h2>
@@ -182,24 +183,6 @@ const CompanyPresentation: React.FC<any> = ({ company }) => {
       </div>
     </div>
   )
-}
-
-export const getStaticProps: GetStaticProps = async (ctx) => {
-  const slug = ctx.params.entreprise
-  const entreprise = await sanity.fetch(entrepriseQuery, { slug })
-  return { props: { entreprise } }
-}
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  const getCompanies = `*[_type == "company" && company.slug != "practical-programming"]{slug}`
-  const companies = await sanity.fetch(getCompanies)
-  const paths = companies.map((company) => {
-    return { params: { entreprise: company.slug.current } }
-  })
-  return {
-    paths,
-    fallback: false, // See the "fallback" section below
-  }
 }
 
 export default CompanyPresentation

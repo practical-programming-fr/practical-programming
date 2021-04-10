@@ -8,7 +8,6 @@ import ContactForm from '../../../../components/jobDetail/ContactForm'
 import dayjs from 'dayjs'
 
 const JobsPage: React.FC<any> = ({ job }) => {
-  console.log(job)
   return (
     <>
       <NextSeo
@@ -92,7 +91,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const getJobs = `*[_type == "job" && published == true && hiringCompany._ref !="59d00fa9-6b14-446e-8b57-4b0e2cc1b7b6"]{slug,hiringCompany->{slug}}`
-  const jobs = await sanity.fetch(getJobs)
+  const jobs = (await sanity.fetch(getJobs)) || []
   const paths = jobs.map((listedJob) => {
     return {
       params: { entreprise: listedJob.hiringCompany.slug.current, job: listedJob.slug.current },

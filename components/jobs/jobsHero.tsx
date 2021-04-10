@@ -1,6 +1,3 @@
-function Hit(props) {
-  return <Highlight attribute="name" hit={props.hit} />
-}
 const JobsHero: React.FC = () => (
   <>
     {/* This example requires Tailwind CSS v2.0+ */}

@@ -5,6 +5,7 @@ import markdownStyles from '../../pages/markdown-styles.module.css'
 import { useNextSanityImage } from 'next-sanity-image'
 import sanity from '../../lib/sanity'
 import YouTube from 'react-youtube'
+import getYouTubeId from 'get-youtube-id'
 
 const H2 = ({ children }) => (
   <h2 className="text-3xl font-extrabold tracking-wider dark:text-white">{children}</h2>

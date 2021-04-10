@@ -27,7 +27,7 @@ const KeyPlayers: React.FC<any> = ({ team }) => {
                       <img
                         className="object-cover shadow-lg rounded-lg"
                         src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixqx=xNLzUn5i0j&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=128&h=128&q=80"
-                        alt
+                        alt="team player"
                       />
                     </div>
                     <div className="sm:col-span-2">

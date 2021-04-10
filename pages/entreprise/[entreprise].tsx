@@ -12,7 +12,7 @@ import TechChallenges from '../../components/company/techChallenges'
 import OurOpinion from '../../components/company/ourOpinion'
 import CompanyJobs from '../../components/company/companyJobs'
 
-const entrepriseQuery = `*[_type == "company" && slug.current==$slug && published==true][0]{
+const entrepriseQuery = `*[_type == "company" && slug.current==$slug ][0]{
 	...,
   "logo":logo.asset->url,
   "jobs": *[_type == "job" && hiringCompany._ref == ^._id]{
@@ -72,8 +72,8 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const getCompanies = `*[_type == "company" && company.slug != "practical-programming"]{slug}`
-  const companies = await sanity.fetch(getCompanies)
+  const getCompanies = `*[_type == "company" && company._id !="59d00fa9-6b14-446e-8b57-4b0e2cc1b7b6" && published==true ]{slug}`
+  const companies = (await sanity.fetch(getCompanies)) || []
   const paths = companies.map((company) => {
     return { params: { entreprise: company.slug.current } }
   })

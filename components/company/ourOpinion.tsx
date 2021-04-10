@@ -5,6 +5,7 @@ import markdownStyles from '../../pages/markdown-styles.module.css'
 import { useNextSanityImage } from 'next-sanity-image'
 import sanity from '../../lib/sanity'
 import YouTube from 'react-youtube'
+import getYouTubeId from 'get-youtube-id'
 
 const H2 = ({ children }) => (
   <h2 className="text-3xl font-extrabold tracking-wider dark:text-white">{children}</h2>
@@ -91,7 +92,7 @@ const OurOpinion: React.FC<any> = ({ opinion }) => {
                 <img
                   className="object-cover lg:h-full lg:w-full"
                   src="https://images.unsplash.com/photo-1520333789090-1afc82db536a?ixlib=rb-1.2.1&ixqx=xNLzUn5i0j&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2102&q=80"
-                  alt
+                  alt="my opinion on this company"
                 />
               </div>
             </div>
