@@ -113,6 +113,11 @@ module.exports = {
           source: '/confirme',
           destination: '/category/confirme',
           permanent: true,
+        },
+        {
+          source: '/cours-nodejs',
+          destination: 'https://practicalprogramming.thinkific.com/',
+          permanent: false,
         }
       ]
     },

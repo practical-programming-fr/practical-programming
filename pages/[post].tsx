@@ -26,6 +26,7 @@ import { useNextSanityImage } from 'next-sanity-image'
 
 import { useEffect } from 'react'
 import CardLink from '../components/post/cardLink'
+import InPostJobCard from '../components/post/jobCard'
 
 const article = `*[_type == "post" && slug.current == $slug][0]
 {
@@ -281,6 +282,7 @@ const Post: React.FC<any> = ({ post, relatedPosts }) => {
                 description={post.metaDescription}
               />
               <BreadCrumbs post={post} />
+              <InPostJobCard />
               <div className="mt-5 flex justify-items-start space-x-4 lg:space-x-6">
                 <Image
                   src={urlFor(post.author.image.asset._ref).width(80).height(80).url()}
