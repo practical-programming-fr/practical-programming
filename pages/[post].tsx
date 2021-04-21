@@ -26,6 +26,7 @@ import { useNextSanityImage } from 'next-sanity-image'
 
 import { useEffect } from 'react'
 import CardLink from '../components/post/cardLink'
+import OptinForm from '../components/post/optinForm'
 
 const article = `*[_type == "post" && slug.current == $slug][0]
 {
@@ -143,6 +144,9 @@ const serializers = {
         : BlockContent.defaultSerializers.types.block(props),
     cardLink: function cardLink({ node }) {
       return <CardLink props={node} />
+    },
+    optinForm: function optinForm({ node }) {
+      return <OptinForm props={node} />
     },
   },
 

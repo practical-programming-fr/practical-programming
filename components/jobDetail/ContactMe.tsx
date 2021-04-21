@@ -10,9 +10,9 @@ const ContactMe: React.FC<any> = ({ author }) => (
           Contacte moi directement
         </h2>
         <p className="text-lg text-gray-500 dark:text-brand mt-4">
-          Si cette opportunité t'intéresse, si tu as des questions ou si tu es curieux de savoir ce
-          que le marché peut te réserver, tu peux également me contacter directement sur Linkedin,
-          Twitter ou par email
+          Si cette opportunité t{`'`}intéresse, si tu as des questions ou si tu es curieux de savoir
+          ce que le marché peut te réserver, tu peux également me contacter directement sur
+          Linkedin, Twitter ou par email
         </p>
         <div className="space-y-12 lg:grid lg:grid-cols-2 lg:gap-8 lg:space-y-0">
           <div className="lg:col-span-2">

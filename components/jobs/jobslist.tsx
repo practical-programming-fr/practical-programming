@@ -1,20 +1,5 @@
-import { InstantSearch, SearchBox, Hits, Highlight } from 'react-instantsearch-dom'
-import { instantMeiliSearch } from '@meilisearch/instant-meilisearch'
-
-function Hit(props) {
-  return <Highlight attribute="name" hit={props.hit} />
-}
-
-const searchClient = instantMeiliSearch(
-  'https://demos.meilisearch.com',
-  'dc3fedaf922de8937fdea01f0a7d59557f1fd31832cb8440ce94231cfdde7f25'
-)
-
 const JobsList: React.FC = () => (
-  <main
-    className="flex-1 max-w-4xl mx-auto mt-12 relative overflow-y-auto focus:outline-none"
-    tabIndex={0}
-  >
+  <main className="flex-1 max-w-4xl mx-auto mt-12 relative overflow-y-auto focus:outline-none">
     <div className="relative z-10 flex-shrink-0 h-16 bg-white border-b border-gray-200 flex">
       <button className="border-r border-gray-200 px-4 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 md:hidden">
         {/* Heroicon name: outline/menu-alt-2 */}

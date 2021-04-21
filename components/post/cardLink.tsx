@@ -1,13 +1,28 @@
 import Image from 'next/image'
+import imageUrlBuilder from '@sanity/image-url'
+import { SanityImageSource } from '@sanity/image-url/lib/types/types'
+import sanity from '../../lib/sanity'
+
+const builder = imageUrlBuilder(sanity)
+const urlFor = (source: SanityImageSource) => {
+  return builder.image(source)
+}
 const CardLink: React.FC<any> = ({ props }) => {
+  const linkProps: any = {
+    href: props.url,
+    style: { textDecoration: 'none' },
+  }
+  if (props.affiliate) {
+    linkProps.rel = 'nofollow sponsored'
+  }
   return (
     <>
       <div className="my-8 bg-blue-200 dark:bg-beige overflow-hidden shadow rounded-lg">
-        <a href={props.url} rel="nofollow sponsored" style={{ textDecoration: 'none' }}>
+        <a {...linkProps}>
           <div className="flex flex-nowrap -mb-3 p-4 sm:p-6">
             <div className="flex-none">
               <Image
-                src="https://images.unsplash.com/photo-1593642531955-b62e17bdaa9c?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80"
+                src={urlFor(props.thumbnail.asset._ref).url()}
                 width={160}
                 height={160}
                 className="rounded-md"

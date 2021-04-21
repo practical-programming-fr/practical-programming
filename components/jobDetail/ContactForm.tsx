@@ -17,7 +17,7 @@ const ContactForm: React.FC<any> = () => {
   const toggleConsent = (): void => setConsent(!consent)
   const sendForm = async (event) => {
     event.preventDefault()
-    await axios.post(`${process.env.NEXT_PUBLIC_URL}/api/opportunity`, contact)
+    await axios.post(`${process.env.NEXT_PUBLIC_URL}/api/signup`, contact)
     router.push('/')
   }
   return (
@@ -203,7 +203,7 @@ const ContactForm: React.FC<any> = () => {
                   </div>
                   <div className="ml-3">
                     <p className="text-base text-gray-500 dark:text-brand">
-                      En envoyant ce formulaire, j'accepte que mes données personnelles soient
+                      En envoyant ce formulaire, j{`'`}accepte que mes données personnelles soient
                       transmisent à Practical Programming.
                     </p>
                   </div>
