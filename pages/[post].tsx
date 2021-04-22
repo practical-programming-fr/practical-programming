@@ -27,6 +27,7 @@ import { useNextSanityImage } from 'next-sanity-image'
 import { useEffect } from 'react'
 import CardLink from '../components/post/cardLink'
 import OptinForm from '../components/post/optinForm'
+import MorePosts from '../components/post/morePosts'
 
 const article = `*[_type == "post" && slug.current == $slug][0]
 {
@@ -65,7 +66,21 @@ const article = `*[_type == "post" && slug.current == $slug][0]
     excerpt,
     slug,
     "image":mainImage.asset->url
-  }
+  },
+  "recentPosts": *[_type == "post" && slug.current != "tests-unitaires" && published == true]{
+		_id,
+  	title,
+  	slug,
+  	excerpt,
+  publishedAt,
+	_updatedAt,
+  categories[0]->{
+		title,
+    slug
+  },
+author->{name,slug,"image":image.asset->url},
+    categories->,
+  } | order(publishedAt desc) | [0..5]
 }`
 const builder = imageUrlBuilder(sanity)
 
@@ -323,6 +338,7 @@ const Post: React.FC<any> = ({ post, relatedPosts }) => {
           </div>
         </div>
       </section>
+      <MorePosts posts={post.recentPosts} />
       <Footer />
     </>
   )
