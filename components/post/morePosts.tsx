@@ -16,7 +16,7 @@ const MorePosts: React.FC<any> = ({ posts }) => {
               <div>
                 <Link href={`/category/${post.categories.slug.current}`}>
                   <a className="inline-block">
-                    <span className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-blue-500 dark:bg-orange-link dark:text-white">
+                    <span className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-blue-500 dark:bg-orange-link text-white">
                       {post.categories.title}
                     </span>
                   </a>
