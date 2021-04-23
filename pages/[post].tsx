@@ -120,7 +120,7 @@ const serializers = {
 
       return (
         <div>
-          <Image {...imageProps} sizes="(max-width: 750) 100vw, 750px" />
+          <Image {...imageProps} sizes="(max-width: 750) 100vw, 750px" alt={props.node.alt} />
           <p
             className="font-thin text-center font-sans text-sm text-gray-800 dark:text-white"
             style={{ marginTop: 0 }}
