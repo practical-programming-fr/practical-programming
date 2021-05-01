@@ -1,6 +1,6 @@
 module.exports = {
     images: {
-      domains: ['practicalprogramming.fr', 'cdn.sanity.io', 'images.unsplash.com'],
+      domains: ['practicalprogramming.fr', 'cdn.sanity.io', 'images.unsplash.com','res.cloudinary.com'],
     },
     async redirects() {
       return [

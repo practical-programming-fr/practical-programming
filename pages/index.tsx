@@ -173,7 +173,6 @@ const IndexPage: React.FC<any> = ({ posts }) => {
       <div>
         <Nav />
         <Hero post={posts.heroPost} />
-        <Section posts={posts.latestPosts} title="Derniers articles" />
         <Section posts={posts.conseilsCarriere} title="Conseil carrière" />
         <Section posts={posts.backend} title="Backend" />
         <Section posts={posts.frontend} title="Frontend" />

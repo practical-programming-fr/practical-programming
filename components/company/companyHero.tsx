@@ -15,7 +15,7 @@ const CompanyHero: React.FC<any> = ({ props }) => {
           </p>
         </div>
         <div className="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:flex lg:items-center">
-          <div className="relative mx-auto w-full rounded-lg shadow-lg lg:max-w-md">
+          <div className="relative mx-auto lg:max-w-md">
             <Image
               className="w-full rounded-lg"
               src={`${props.logo}?h=300&w300`}

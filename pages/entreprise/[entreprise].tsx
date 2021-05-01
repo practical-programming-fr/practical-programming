@@ -55,11 +55,10 @@ const Entreprise: React.FC<any> = ({ entreprise }) => {
       <Nav />
       <CompanyHero props={entreprise} />
       <CompanyPresentation company={entreprise} />
-      <CompanyNumbers />
-      <KeyPlayers team={entreprise.team} />
+      <CompanyNumbers company={entreprise} />
       <TechChallenges challenges={entreprise.projects} />
+      <KeyPlayers team={entreprise.team} />
       <OurOpinion opinion={entreprise.opinion} />
-      <CompanyJobs jobs={entreprise.jobs} />
       <Footer />
     </>
   )

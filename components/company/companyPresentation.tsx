@@ -174,6 +174,7 @@ const CompanyPresentation: React.FC<any> = ({ company }) => {
       <div className="relative px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <div className="mt-6 text-gray-500 dark:text-brand mx-auto">
           <h2 className="text-3xl font-extrabold tracking-wider dark:text-white">{company.name}</h2>
+
           <BlockContent
             blocks={company.presentation}
             className={markdownStyles.markdown}

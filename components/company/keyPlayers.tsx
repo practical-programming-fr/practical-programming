@@ -1,7 +1,15 @@
 import Image from 'next/image'
-import Link from 'next/link'
+import imageUrlBuilder from '@sanity/image-url'
+import sanity from '../../lib/sanity'
+import { SanityImageSource } from '@sanity/image-url/lib/types/types'
+const builder = imageUrlBuilder(sanity)
+
+const urlFor = (source: SanityImageSource) => {
+  return builder.image(source)
+}
 
 const KeyPlayers: React.FC<any> = ({ team }) => {
+  console.log()
   return (
     <div className="bg-white dark:bg-light-gray">
       <div className="mx-auto py-12 px-4 max-w-4xl sm:px-6 lg:px-8 lg:py-24">
@@ -11,10 +19,7 @@ const KeyPlayers: React.FC<any> = ({ team }) => {
               Les leaders tech
             </h2>
             <p className="text-xl text-gray-500 dark:text-brand">
-              Les équipes tech de DLD sont structurées sous formes de squad shopify, comprenant un
-              PO, deux ou trois développeurs, un QA analyst et un designer. Aujourd'hui il y a 3
-              squads, réparties par challenges métiers, à savoir l'expérience utilisateur, les
-              connecteurs apps tierces et la data analysis.
+              Découvre les profils des personnes clés au sein de l'équipe tech
             </p>
           </div>
           <div className="lg:col-span-2">
@@ -24,10 +29,16 @@ const KeyPlayers: React.FC<any> = ({ team }) => {
                   <div className="space-y-4 sm:grid sm:grid-cols-3 sm:items-start sm:gap-6 sm:space-y-0">
                     {/* Image */}
                     <div className="aspect-w-3 aspect-h-2 sm:aspect-w-3 sm:aspect-h-4">
-                      <img
+                      <Image
                         className="object-cover shadow-lg rounded-lg"
-                        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixqx=xNLzUn5i0j&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=128&h=128&q=80"
-                        alt="team player"
+                        width={128}
+                        height={128}
+                        src={
+                          player.image
+                            ? `${urlFor(player.image).url()}`
+                            : 'https://res.cloudinary.com/doquvzod9/image/upload/v1619767233/unknown_y7klqs.jpg'
+                        }
+                        alt={`${player.name} - ${player.position}`}
                       />
                     </div>
                     <div className="sm:col-span-2">
