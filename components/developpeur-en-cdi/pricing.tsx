@@ -164,9 +164,11 @@ const Pricing: React.FC = () => {
                   </div>
                   <div className="py-8 px-6 text-center bg-gray-50 lg:flex-shrink-0 lg:flex lg:flex-col lg:justify-center lg:p-12">
                     <div className="mt-4 flex items-center justify-center text-5xl font-extrabold text-gray-900">
-                      <span>39€</span>
+                      <span>99€</span>
                     </div>
-                    <p className="text-lg pt-2 leading-6 font-medium text-gray-900">par mois</p>
+                    <p className="text-lg pt-2 leading-6 font-medium text-gray-900">
+                      ou 3 fois 33€
+                    </p>
                     <div className="mt-6">
                       <div className="rounded-md shadow">
                         <Link href="https://academy.practicalprogramming.fr/products/courses/view/1059090/?action=signup">

@@ -30,14 +30,23 @@ const Entreprise: React.FC<any> = ({ entreprise }) => {
       <NextSeo
         title={`${entreprise.name} recherche des développeurs`}
         description={entreprise.excerpt}
-        canonical={`https://practicalprogramming.fr/company/`}
+        canonical={`https://practicalprogramming.fr/entreprise/${entreprise.slug.current}`}
         openGraph={{
-          url: `https://practicalprogramming.fr/category/`,
+          url: `https://practicalprogramming.fr/entreprise/${entreprise.slug.current}`,
           locale: 'fr_FR',
           type: 'article',
-          title: 'category.title',
-          description: 'category.description',
+          title: `${entreprise.name} recherche des développeurs`,
+          description: `${entreprise.metaDescription}`,
           site_name: 'Practical Programming',
+          images: [
+            {
+              url:
+                'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+              width: 800,
+              height: 600,
+              alt: "Exemple d'image de startup",
+            },
+          ],
         }}
         twitter={{
           handle: '@RayedBenbrahim',

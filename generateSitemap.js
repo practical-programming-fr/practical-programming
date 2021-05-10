@@ -25,8 +25,10 @@ const client = sanityClient({
     "category": categories[0]->{title}
   }`
   const categoryQuery = '*[_type == "category"]{"slug":slug.current,_updatedAt}'
+  const entrepriseQuery = '*[_type == "company" && company._id !="59d00fa9-6b14-446e-8b57-4b0e2cc1b7b6" && published==true]{"slug":slug.current,_updatedAt}'
   const posts = await client.fetch(postsQuery)
   const categories = await client.fetch(categoryQuery)
+  const entreprises = await client.fetch(entrepriseQuery)
   // Ignore Next.js specific files (e.g., _app.js) and API routes.
   const pages = await globby(['pages/**/*{.js,.tsx}', '!pages/_*{.js,.tsx}', '!pages/api', '!pages/**/[*{.js,.tsx}', '!pages/form'])
   const pageSitemap =`<?xml version="1.0" encoding="UTF-8"?>
@@ -75,6 +77,20 @@ const client = sanityClient({
           }).join('')}
   </urlset>
 `
+const entrepriseSitemap =`<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+      ${entreprises
+        .map(entreprise => {
+          return `
+                <url>
+                    <loc>${`https://practicalprogramming.fr/entreprise/${entreprise.slug}`}</loc>
+                    <lastmod>${entreprise._updatedAt}</lastmod>
+                    <changefreq>monthly</changefreq>
+                </url>
+            `
+        }).join('')}
+</urlset>
+`
 const today = new Date()
 const masterSitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -92,6 +108,10 @@ const masterSitemap = `<?xml version="1.0" encoding="UTF-8"?>
    </sitemap>
    <sitemap>
       <loc>https://practicalprogramming.fr/post-sitemap.xml</loc>
+      <lastmod>${today.toISOString()}</lastmod>
+   </sitemap>
+   <sitemap>
+      <loc>https://practicalprogramming.fr/entreprise-sitemap.xml</loc>
       <lastmod>${today.toISOString()}</lastmod>
    </sitemap>
 </sitemapindex>
@@ -161,6 +181,7 @@ const rssXml = blogPosts => {
   fs.writeFileSync('public/page-sitemap.xml', pageSitemap)
   fs.writeFileSync('public/post-sitemap.xml', postSitemap)
   fs.writeFileSync('public/category-sitemap.xml', categorySitemap)
+  fs.writeFileSync('public/entreprise-sitemap.xml', entrepriseSitemap)
   fs.writeFileSync('public/sitemap.xml', masterSitemap)
   fs.writeFileSync('public/rss.xml', rssXml(posts))
 } catch (err) {

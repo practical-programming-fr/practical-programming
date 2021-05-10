@@ -7,6 +7,23 @@ import sanity from '../../lib/sanity'
 import YouTube from 'react-youtube'
 import getYouTubeId from 'get-youtube-id'
 
+const OpinionAuthor: React.FC<any> = () => {
+  return (
+    <div className="flex">
+      <div className="mt-6 mr-4 flex-row-reverse">
+        <Image
+          src="https://res.cloudinary.com/doquvzod9/image/upload/v1619852104/Download_me_cklp-removebg-preview_r54iuw.png"
+          width={199}
+          height={119}
+          className="h-16 w-16"
+        />
+        <h4 className="text-lg font-bold ml-8">Rayed Benbrahim</h4>
+      </div>
+      <div></div>
+    </div>
+  )
+}
+
 const H2 = ({ children }) => (
   <h2 className="text-3xl font-extrabold tracking-wider dark:text-white">{children}</h2>
 )
@@ -84,19 +101,7 @@ const OurOpinion: React.FC<any> = ({ opinion }) => {
   return (
     <div className="bg-gray-50 dark:bg-light-gray pt-16 lg:py-24">
       <div className="pb-16 bg-blue-600 dark:bg-orange-link lg:pb-0 lg:z-10 lg:relative">
-        <div className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-3 lg:gap-8">
-          <div className="relative lg:-my-8">
-            <div aria-hidden="true" className="absolute inset-x-0 top-0 h-1/2 bg-white lg:hidden" />
-            <div className="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:p-0 lg:h-full">
-              <div className="aspect-w-10 aspect-h-6 rounded-xl shadow-xl overflow-hidden sm:aspect-w-16 sm:aspect-h-7 lg:aspect-none lg:h-full">
-                <img
-                  className="object-cover lg:h-full lg:w-full"
-                  src="https://images.unsplash.com/photo-1520333789090-1afc82db536a?ixlib=rb-1.2.1&ixqx=xNLzUn5i0j&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2102&q=80"
-                  alt="my opinion on this company"
-                />
-              </div>
-            </div>
-          </div>
+        <div className="mx-auto max-w-4xl lg:px-8">
           <div className="mt-12 lg:m-0 lg:col-span-2 lg:pl-8">
             <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:px-0 lg:py-20 lg:max-w-none">
               <blockquote>
@@ -116,8 +121,7 @@ const OurOpinion: React.FC<any> = ({ opinion }) => {
                   />
                 </div>
                 <div className="mt-6">
-                  <p className="text-base font-medium text-white">Rayed Benbrahim</p>
-                  <p className="text-base font-medium text-blue-100">Practical Programming</p>
+                  <OpinionAuthor />
                 </div>
               </blockquote>
             </div>

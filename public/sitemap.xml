@@ -6,14 +6,18 @@
    </sitemap>
    <sitemap>
       <loc>https://practicalprogramming.fr/category-sitemap.xml</loc>
-      <lastmod>2021-04-30T07:25:06.188Z</lastmod>
+      <lastmod>2021-05-07T08:45:28.686Z</lastmod>
    </sitemap>
    <sitemap>
       <loc>https://practicalprogramming.fr/page-sitemap.xml</loc>
-      <lastmod>2021-04-30T07:25:06.188Z</lastmod>
+      <lastmod>2021-05-07T08:45:28.686Z</lastmod>
    </sitemap>
    <sitemap>
       <loc>https://practicalprogramming.fr/post-sitemap.xml</loc>
-      <lastmod>2021-04-30T07:25:06.188Z</lastmod>
+      <lastmod>2021-05-07T08:45:28.686Z</lastmod>
+   </sitemap>
+   <sitemap>
+      <loc>https://practicalprogramming.fr/entreprise-sitemap.xml</loc>
+      <lastmod>2021-05-07T08:45:28.686Z</lastmod>
    </sitemap>
 </sitemapindex>

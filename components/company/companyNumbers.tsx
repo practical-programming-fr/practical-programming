@@ -1,6 +1,6 @@
 const CompanyNumbers: React.FC<any> = ({ company }) => {
   const AnchorEmbed = ({ script }) => (
-    <div className="my-10" dangerouslySetInnerHTML={{ __html: script }} />
+    <div className="my-10 w-full" dangerouslySetInnerHTML={{ __html: script }} />
   )
 
   return (
