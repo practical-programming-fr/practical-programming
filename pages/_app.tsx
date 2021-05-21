@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
+import { Provider } from 'next-auth/client'
 import * as gtag from '../lib/gtag'
 import '../styles/index.css'
 
@@ -17,7 +18,11 @@ const App = ({ Component, pageProps }: AppProps) => {
     }
   }, [router.events])
 
-  return <Component {...pageProps} />
+  return (
+    <Provider session={pageProps.session}>
+      <Component {...pageProps} />
+    </Provider>
+  )
 }
 
 export default App

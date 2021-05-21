@@ -6,6 +6,7 @@ import sanity from '../lib/sanity'
 import { NextSeo } from 'next-seo'
 
 import { GetStaticProps } from 'next'
+import { signIn, signOut, useSession } from 'next-auth/client'
 
 const getPosts = `{
   "heroPost": *[_type == "post"]
@@ -131,6 +132,8 @@ const organisationJsonId = {
 }
 
 const IndexPage: React.FC<any> = ({ posts }) => {
+  const [session, loading] = useSession()
+  console.log(session)
   return (
     <>
       <NextSeo
@@ -172,6 +175,18 @@ const IndexPage: React.FC<any> = ({ posts }) => {
       />
       <div>
         <Nav />
+        {!session && (
+          <>
+            Not signed in <br />
+            <button onClick={() => signIn()}>Sign in</button>
+          </>
+        )}
+        {session && (
+          <>
+            Signed in as {session.user.email} <br />
+            <button onClick={() => signOut()}>Sign out</button>
+          </>
+        )}
         <Hero post={posts.heroPost} />
         <Section posts={posts.conseilsCarriere} title="Conseil carrière" />
         <Section posts={posts.backend} title="Backend" />
