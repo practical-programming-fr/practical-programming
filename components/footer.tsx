@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
                   </Link>
                 </li>
                 <li className="pb-2">
-                  <Link href="/gestion-des-cookies">
+                  <Link href="/mention-legales">
                     <a className="text-gray-600 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white hover:underline cursor-pointer">
                       Mentions légales
                     </a>
