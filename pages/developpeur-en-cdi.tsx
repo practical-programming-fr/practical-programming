@@ -9,7 +9,6 @@ import Pains from '../components/developpeur-en-cdi/pains'
 import Story2 from '../components/developpeur-en-cdi/story2'
 import Testimonials from '../components/developpeur-en-cdi/testimonials'
 import HardSell from '../components/developpeur-en-cdi/hardSell'
-import Warranty from '../components/developpeur-en-cdi/warranty'
 import Features from '../components/developpeur-en-cdi/features'
 import Schedule from '../components/developpeur-en-cdi/schedule'
 

@@ -1,5 +1,3 @@
-import Image from 'next/image'
-import Link from 'next/link'
 import JobListing from './jobListing'
 
 const CompanyJobs: React.FC<any> = ({ jobs }) => {

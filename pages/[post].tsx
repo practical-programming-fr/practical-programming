@@ -4,6 +4,7 @@ import Nav from '../components/nav'
 import Footer from '../components/footer'
 import Summary from '../components/post/summary'
 import Image from 'next/image'
+import Script from 'next/script'
 import sanity from '../lib/sanity'
 import imageUrlBuilder from '@sanity/image-url'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
@@ -28,6 +29,7 @@ import { useEffect } from 'react'
 import CardLink from '../components/post/cardLink'
 import OptinForm from '../components/post/optinForm'
 import MorePosts from '../components/post/morePosts'
+import WeLoveDevs from '../components/post/weLoveDevs'
 
 const article = `*[_type == "post" && slug.current == $slug][0]
 {
@@ -101,7 +103,7 @@ const overrides = {
     return <h2 id={slugify(JSON.stringify(props.children), options)} {...props} />
   },
   h3: function h3override(props) {
-    return <h3 id={slugify(JSON.stringify(props.children), options)} />
+    return <h3 id={slugify(JSON.stringify(props.children), options)} {...props} />
   },
 }
 
@@ -339,6 +341,9 @@ const Post: React.FC<any> = ({ post, relatedPosts }) => {
         </div>
       </section>
       <MorePosts posts={post.recentPosts} />
+      <WeLoveDevs />
+
+      <Script src="https://widget.welovedevs.com/jobs-widget.js" type="module" />
       <Footer />
     </>
   )

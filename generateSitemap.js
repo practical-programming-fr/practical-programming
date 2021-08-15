@@ -69,7 +69,7 @@ const client = sanityClient({
           .map(category => {
             return `
                   <url>
-                      <loc>${`https://practicalprogramming.fr/${category.slug}`}</loc>
+                      <loc>${`https://practicalprogramming.fr/category/${category.slug}`}</loc>
                       <lastmod>${category._updatedAt}</lastmod>
                       <changefreq>yearly</changefreq>
                   </url>

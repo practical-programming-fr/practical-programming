@@ -10,7 +10,6 @@ import CompanyNumbers from '../../components/company/companyNumbers'
 import KeyPlayers from '../../components/company/keyPlayers'
 import TechChallenges from '../../components/company/techChallenges'
 import OurOpinion from '../../components/company/ourOpinion'
-import CompanyJobs from '../../components/company/companyJobs'
 
 const entrepriseQuery = `*[_type == "company" && slug.current==$slug ][0]{
 	...,

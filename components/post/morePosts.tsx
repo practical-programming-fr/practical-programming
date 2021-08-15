@@ -22,7 +22,7 @@ const MorePosts: React.FC<any> = ({ posts }) => {
                   </a>
                 </Link>
               </div>
-              <Link href={`${post.slug.current}`}>
+              <Link href={`/${post.slug.current}`}>
                 <a className="block mt-4">
                   <p className="text-xl font-semibold text-gray-900 dark:text-orange-link">
                     {post.title}
@@ -33,9 +33,13 @@ const MorePosts: React.FC<any> = ({ posts }) => {
               <div className="mt-6 flex items-center">
                 <div className="flex-shrink-0">
                   <Link href={`/author/${post.author.slug.current}`}>
-                    <a href={post.author.slug.current}>
+                    <a>
                       <span className="sr-only">{post.author.name}</span>
-                      <img className="h-10 w-10 rounded-full" src={post.author.image} alt="" />
+                      <img
+                        className="h-10 w-10 rounded-full"
+                        src={post.author.image}
+                        alt={`article écrit par ${post.author.name}`}
+                      />
                     </a>
                   </Link>
                 </div>

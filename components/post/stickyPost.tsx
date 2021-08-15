@@ -1,4 +1,3 @@
-import Link from 'next/link'
 const StickyPost: React.FC<any> = () => {
   return (
     <aside className="px-8 py-8 bg-white dark:bg-gray-800 rounded-lg min-h-40 max-w-lg lg:fixed z-0">

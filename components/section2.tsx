@@ -1,13 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import dayjs from 'dayjs'
 
 interface SectionProps {
   posts: any
   title: string
 }
 
-const Section2: React.FC<SectionProps> = ({ posts, title }) => {
+const Section2: React.FC<SectionProps> = () => {
   return (
     <section className="grid grid-cols-3 gap-4 max-w-5xl mx-auto">
       <div className="col-span-3 md:col-span-2 bg-blue">

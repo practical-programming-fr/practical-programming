@@ -30,24 +30,31 @@ module.exports = {
         rules: {
           // We will use TypeScript's types for component props instead
           'react/prop-types': 'off',
-  
+          'react/no-unescaped-entities':'off',
+          '@typescript-eslint/no-explicit-any':'off',
+          '@typescript-eslint/explicit-module-boundary-types':'off',
+          '@typescript-eslint/explicit-function-return-type':'off',
+          'react/jsx-key':'off',
           // No need to import React when using Next.js
           'react/react-in-jsx-scope': 'off',
   
           // This rule is not compatible with Next.js's <Link /> components
           'jsx-a11y/anchor-is-valid': 'off',
+          'jsx-a11y/click-events-have-key-events':'off',
+          'jsx-a11y/no-static-element-interactions':'off',
+          'no-irregular-whitespace':'off',
   
           // Why would you want unused vars?
           '@typescript-eslint/no-unused-vars': ['error'],
-  
+          
           // I suggest this setting for requiring return types on functions only where useful
-          '@typescript-eslint/explicit-function-return-type': [
-            'warn',
-            {
-              allowExpressions: true,
-              allowConciseArrowFunctionExpressionsStartingWithVoid: true,
-            },
-          ],
+          // '@typescript-eslint/explicit-function-return-type': [
+          //   'warn',
+          //   {
+          //     allowExpressions: true,
+          //     allowConciseArrowFunctionExpressionsStartingWithVoid: true,
+          //   },
+          // ],
           // Includes .prettierrc.js rules
           'prettier/prettier': ['error', {}, { usePrettierrc: true }], 
         },

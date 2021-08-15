@@ -7,9 +7,9 @@ const Schedule: React.FC = () => (
             De nouvelles consignes chaque semaine pour continuer à avancer
           </p>
           <p className="max-w-5xl mt-5 mx-auto text-xl text-gray-700">
-            Chaque semaine, tu recevras des consignes par email t&rsquo;invitant à travailler sur une
-            notion technique, sur un aspect de ton CV ou de ton profil Linkedin, ou t&rsquo;expliquant
-            comment implémenter une brique dans ton projet professionnalisant.
+            Chaque semaine, tu recevras des consignes par email t&rsquo;invitant à travailler sur
+            une notion technique, sur un aspect de ton CV ou de ton profil Linkedin, ou
+            t&rsquo;expliquant comment implémenter une brique dans ton projet professionnalisant.
           </p>
         </div>
       </div>

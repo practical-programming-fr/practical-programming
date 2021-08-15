@@ -14,23 +14,21 @@ const RelatedPost: React.FC<any> = ({ relatedPosts, category, slug }) => {
         </Link>
         {relatedPosts.map((relatedPost) => {
           return (
-            <>
-              <div className="w-full p-4 relative" key={relatedPost.slug.current}>
-                <Link href={relatedPost.slug.current}>
-                  <a className="text-gray-800 dark:text-white text-2xl font-bold mb-2 dark:text-orange-link">
-                    {relatedPost.title}
-                  </a>
-                </Link>
-                <Link href={relatedPost.slug.current}>
-                  <a>
-                    <p className="text-gray-600 dark:text-brand font-light text-lg pt-2">
-                      {relatedPost.excerpt}
-                    </p>
-                  </a>
-                </Link>
-              </div>
+            <div className="w-full p-4 relative" key={relatedPost.slug.current}>
+              <Link href={`/${relatedPost.slug.current}`}>
+                <a className="text-gray-800 dark:text-white text-2xl font-bold mb-2 dark:text-orange-link">
+                  {relatedPost.title}
+                </a>
+              </Link>
+              <Link href={`/${relatedPost.slug.current}`}>
+                <a>
+                  <p className="text-gray-600 dark:text-brand font-light text-lg pb-6">
+                    {relatedPost.excerpt}
+                  </p>
+                </a>
+              </Link>
               <hr />
-            </>
+            </div>
           )
         })}
         <div className="w-full my-4 p-4 bg-blue-200 rounded-lg">
