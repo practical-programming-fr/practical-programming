@@ -18,6 +18,7 @@ lib/gtag.ts
 # production
 /build
 /public/*
+public/sitemap.xml
 
 
 # misc
