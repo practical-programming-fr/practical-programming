@@ -17,7 +17,11 @@
   }
   
   .markdown h3 {
-    @apply text-2xl font-bold mt-8 mb-4 leading-snug;
+    @apply text-2xl font-bold mt-8 mb-4 ml-2 leading-snug;
+  }
+
+  .markdown h4 {
+    @apply text-xl font-bold mt-8 mb-4 ml-4 leading-snug;
   }
 
   .markdown a {
@@ -32,7 +36,7 @@
     @apply list-decimal
   }
   .markdown li {
-    @apply mt-2
+    @apply mt-2 ml-12
   }
 
   @media (prefers-color-scheme: dark) {
