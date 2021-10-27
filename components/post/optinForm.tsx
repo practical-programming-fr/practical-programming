@@ -11,7 +11,6 @@ const OptinForm: React.FC<any> = ({ props }) => {
     updatedContact[eventData.id] = eventData.value
     setContact(updatedContact)
   }
-  console.log(contact)
   const toggleConsent = (): void => setConsent(!consent)
   const signup = async (event) => {
     event.preventDefault()

@@ -8,7 +8,7 @@ export default function Nav() {
       <nav className="bg-white dark:bg-nav-gray border-b dark:border-nav-gray">
         <div className="max-w-7xl mx-auto px-2">
           <div className="relative flex items-center justify-between h-20">
-            <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
               {/* Mobile menu button*/}
               <button
                 className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
@@ -62,7 +62,7 @@ export default function Nav() {
                 </svg>
               </button>
             </div>
-            <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+            <div className="flex-1 flex items-center justify-center md:items-stretch md:justify-start">
               <div className="flex-shrink-0 flex items-center">
                 <Link href="/">
                   <a>
@@ -86,7 +86,7 @@ export default function Nav() {
                   </a>
                 </Link>
               </div>
-              <div className="hidden sm:block sm:ml-6">
+              <div className="hidden md:block md:ml-6">
                 <div className="flex space-x-4 mt-1">
                   <Link href="/devenir-developpeur">
                     <a className="text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-white tracking-widest px-3 py-2 rounded-md text-sm font-medium">
@@ -108,6 +108,11 @@ export default function Nav() {
                       Postman
                     </a>
                   </Link>
+                  <Link href="/snowflake">
+                    <a className="text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-white tracking-widest px-3 py-2 rounded-md text-sm font-medium">
+                      Snowflake
+                    </a>
+                  </Link>
                   <Link href="https://academy.practicalprogramming.fr">
                     <a className="text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-white tracking-widest px-3 py-2 rounded-md text-sm font-medium">
                       Académie
@@ -123,14 +128,14 @@ export default function Nav() {
 
     Menu open: "block", Menu closed: "hidden"
   */}
-        <div className={responsiveMenuisOpen ? 'block sm:hidden' : 'hidden'}>
+        <div className={responsiveMenuisOpen ? 'block md:hidden' : 'hidden'}>
           <div className="px-2 pt-2 pb-3 space-y-1">
             <Link href="/devenir-developpeur">
               <a
                 onClick={() => {
                   setResponsiveMenu(!responsiveMenuisOpen)
                 }}
-                className="hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                className="hover:bg-gray-700 hover:text-white block dark:text-gray-300 px-3 py-2 rounded-md text-base font-medium"
               >
                 Devenir Développeur
               </a>
@@ -140,7 +145,7 @@ export default function Nav() {
                 onClick={() => {
                   setResponsiveMenu(!responsiveMenuisOpen)
                 }}
-                className="hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                className="hover:bg-gray-700 hover:text-white block dark:text-gray-300 px-3 py-2 rounded-md text-base font-medium"
               >
                 Node
               </a>
@@ -150,7 +155,7 @@ export default function Nav() {
                 onClick={() => {
                   setResponsiveMenu(!responsiveMenuisOpen)
                 }}
-                className="hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                className="hover:bg-gray-700 hover:text-white block dark:text-gray-300 px-3 py-2 rounded-md text-base font-medium"
               >
                 Mongodb
               </a>
@@ -160,9 +165,19 @@ export default function Nav() {
                 onClick={() => {
                   setResponsiveMenu(!responsiveMenuisOpen)
                 }}
-                className="hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                className="hover:bg-gray-700 hover:text-white block dark:text-gray-300 px-3 py-2 rounded-md text-base font-medium"
               >
                 Postman
+              </a>
+            </Link>
+            <Link href="/snowflake">
+              <a
+                onClick={() => {
+                  setResponsiveMenu(!responsiveMenuisOpen)
+                }}
+                className="hover:bg-gray-700 hover:text-white block dark:text-gray-300 px-3 py-2 rounded-md text-base font-medium"
+              >
+                Snowflake
               </a>
             </Link>
             <Link href="https://academy.practicalprogramming.fr">
@@ -170,7 +185,7 @@ export default function Nav() {
                 onClick={() => {
                   setResponsiveMenu(!responsiveMenuisOpen)
                 }}
-                className="hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                className="hover:bg-gray-700 hover:text-white block px-3 dark:text-gray-300 py-2 rounded-md text-base font-medium"
               >
                 Académie
               </a>

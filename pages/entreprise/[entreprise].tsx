@@ -1,3 +1,4 @@
+/* eslint-disable prefer-rest-params */
 import Nav from '../../components/nav'
 import Footer from '../../components/footer'
 import sanity from '../../lib/sanity'
@@ -67,6 +68,7 @@ const Entreprise: React.FC<any> = ({ entreprise }) => {
       <TechChallenges challenges={entreprise.projects} />
       <KeyPlayers team={entreprise.team} />
       <OurOpinion opinion={entreprise.opinion} />
+
       <Footer />
     </>
   )
