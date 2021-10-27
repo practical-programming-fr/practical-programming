@@ -9,6 +9,7 @@ const client = sanityClient({
   token:
     'sk7egF1zKn07Aoa9KKpbAIeZ04eFHTz6DpWOgoVGWR1Cv5B7qeiLIY2qZg8mG9AHbmUq7xob4rSFBQBRpHbjEAsOGjdjbfRuy0uvWwjwIQX33PNGv7BAjtmQoehT4M7rhsqGYfWXKl0AATRJ7ehzBOloQxR07zDb33nSIxmAuXZXGdmxZJY4',
   useCdn: true,
+  apiVersion: 'v1'
 })
 
  const generateSitemap =  async () => {
