@@ -7,7 +7,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "@meilisearch/instant-meilisearch": "^0.3.2",
     "@sanity/block-content-to-react": "^2.0.7",
     "@sanity/client": "^2.1.4",
     "@sanity/image-url": "^0.140.19",
@@ -18,7 +17,7 @@
     "get-youtube-id": "^1.0.1",
     "lit-element": "^2.5.1",
     "lodash": "^4.17.21",
-    "next": "^11.0.1",
+    "next": "12",
     "next-sanity-image": "^1.0.1",
     "next-seo": "^4.17.0",
     "react": "^17.0.2",
