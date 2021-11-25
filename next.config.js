@@ -2,6 +2,7 @@ module.exports = {
     images: {
       domains: ['practicalprogramming.fr', 'cdn.sanity.io', 'images.unsplash.com','res.cloudinary.com'],
     },
+    swcMinify: true,
     async redirects() {
       return [
         {
