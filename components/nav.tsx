@@ -14,7 +14,6 @@ function classNames(...classes) {
 
 export default function Nav() {
   const { user, error, isLoading } = useUser();
-  if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;
   return (
     <Disclosure as="nav" className="bg-white dark:bg-nav-gray border-b dark:border-nav-gray">

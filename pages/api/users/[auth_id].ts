@@ -20,14 +20,14 @@ const UserService = async (req,res) => {
 
 const getUser = async (auth_id) => {
   const client = await connectToDatabase()
-  const db = client.db()
+  const db = client.db
   const developers = db.collection("developers");
   return developers.find({auth_id}).toArray()
 }
 
 const updateUser = async (auth_id, userData) =>  {
   const client = await connectToDatabase()
-  const db = client.db()
+  const db = client.db
   const developers = db.collection("developers");
   const updatedUser = await developers.findOneAndUpdate(auth_id,{$set:userData})
   return updatedUser

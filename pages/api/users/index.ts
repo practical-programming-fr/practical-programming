@@ -20,7 +20,7 @@ const UsersService = async (req,res) => {
 
 const getUsers = async () => {
   const client = await connectToDatabase()
-  const db = client.db()
+  const db = client.db
   const developers = db.collection("developers");
   return developers.find().toArray()
 }
