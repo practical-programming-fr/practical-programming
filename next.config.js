@@ -1,6 +1,6 @@
 module.exports = {
     images: {
-      domains: ['practicalprogramming.fr', 'cdn.sanity.io', 'images.unsplash.com','res.cloudinary.com'],
+      domains: ['practicalprogramming.fr', 'cdn.sanity.io', 'images.unsplash.com','res.cloudinary.com','lh3.googleusercontent.com','avatars.githubusercontent.com'],
     },
     swcMinify: true,
     async redirects() {
@@ -113,6 +113,11 @@ module.exports = {
         {
           source: '/confirme',
           destination: '/category/confirme',
+          permanent: true,
+        },
+        {
+          source: '/comment-scaler-une-application',
+          destination: '/mongo-shard',
           permanent: true,
         }
       ]

@@ -31,7 +31,7 @@ const client = sanityClient({
   const categories = await client.fetch(categoryQuery)
   const entreprises = await client.fetch(entrepriseQuery)
   // Ignore Next.js specific files (e.g., _app.js) and API routes.
-  const pages = await globby(['pages/**/*{.js,.tsx}', '!pages/_*{.js,.tsx}', '!pages/api', '!pages/**/[*{.js,.tsx}', '!pages/form', '!pages/trigger'])
+  const pages = await globby(['pages/**/*{.js,.tsx}', '!pages/_*{.js,.tsx}', '!pages/api', '!pages/**/[*{.js,.tsx}', '!pages/form', '!pages/trigger', '!pages/profile'])
   const pageSitemap =`<?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             ${pages

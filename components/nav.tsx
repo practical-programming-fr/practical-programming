@@ -1,69 +1,40 @@
+/* This example requires Tailwind CSS v2.0+ */
+import { Fragment } from 'react'
+import { Disclosure, Menu, Transition } from '@headlessui/react'
+import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import Link from 'next/link'
-import { useState } from 'react'
+import Image from 'next/image'
+import { useUser } from '@auth0/nextjs-auth0';
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
+
+
 
 export default function Nav() {
-  const [responsiveMenuisOpen, setResponsiveMenu] = useState(false)
+  const { user, error, isLoading } = useUser();
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>{error.message}</div>;
   return (
-    <>
-      <nav className="bg-white dark:bg-nav-gray border-b dark:border-nav-gray">
-        <div className="max-w-7xl mx-auto px-2">
-          <div className="relative flex items-center justify-between h-20">
-            <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
-              {/* Mobile menu button*/}
-              <button
-                className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-                aria-expanded="false"
-                onClick={() => {
-                  setResponsiveMenu(!responsiveMenuisOpen)
-                }}
-              >
-                <span className="sr-only">Open main menu</span>
-                {/* Icon when menu is closed. */}
-                {/*
-      Heroicon name: menu
-
-      Menu open: "hidden", Menu closed: "block"
-    */}
-                <svg
-                  className="block h-6 w-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-                {/* Icon when menu is open. */}
-                {/*
-      Heroicon name: x
-
-      Menu open: "block", Menu closed: "hidden"
-    */}
-                <svg
-                  className="hidden h-6 w-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div className="flex-1 flex items-center justify-center md:items-stretch md:justify-start">
-              <div className="flex-shrink-0 flex items-center">
+    <Disclosure as="nav" className="bg-white dark:bg-nav-gray border-b dark:border-nav-gray">
+      {({ open }) => (
+        <>
+          <div className="max-w-7xl mx-auto px-2">
+            <div className="relative flex justify-between h-16">
+              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                {/* Mobile menu button */}
+                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                  <span className="sr-only">Open main menu</span>
+                  {open ? (
+                    <XIcon className="block h-6 w-6" aria-hidden="true" />
+                  ) : (
+                    <MenuIcon className="block h-6 w-6" aria-hidden="true" />
+                  )}
+                </Disclosure.Button>
+              </div>
+              <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+                <div className="flex-shrink-0 flex items-center">
                 <Link href="/">
                   <a>
                     <svg
@@ -85,114 +56,159 @@ export default function Nav() {
                     Practical Programming
                   </a>
                 </Link>
-              </div>
-              <div className="hidden md:block md:ml-6">
-                <div className="flex space-x-4 mt-1">
+                </div>
+                <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
                   <Link href="/devenir-developpeur">
-                    <a className="text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-white tracking-widest px-3 py-2 rounded-md text-sm font-medium">
+                    <a className="border-transparent hover:border-gray-300 text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
                       Devenir Développeur
                     </a>
                   </Link>
                   <Link href="/nodejs">
-                    <a className="text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-white tracking-widest px-3 py-2 rounded-md text-sm font-medium">
+                  <a className="border-transparent hover:border-gray-300 text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
                       Node
                     </a>
                   </Link>
                   <Link href="/mongodb">
-                    <a className="text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-white tracking-widest px-3 py-2 rounded-md text-sm font-medium">
+                  <a className="border-transparent hover:border-gray-300 text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
                       MongoDB
                     </a>
                   </Link>
                   <Link href="/postman">
-                    <a className="text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-white tracking-widest px-3 py-2 rounded-md text-sm font-medium">
+                  <a className="border-transparent hover:border-gray-300 text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
                       Postman
                     </a>
                   </Link>
                   <Link href="/snowflake">
-                    <a className="text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-white tracking-widest px-3 py-2 rounded-md text-sm font-medium">
+                  <a className="border-transparent hover:border-gray-300 text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
                       Snowflake
                     </a>
                   </Link>
                   <Link href="https://academy.practicalprogramming.fr">
-                    <a className="text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-white tracking-widest px-3 py-2 rounded-md text-sm font-medium">
+                  <a className="border-transparent hover:border-gray-300 text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
                       Académie
                     </a>
                   </Link>
                 </div>
               </div>
+              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                {/* <button
+                  type="button"
+                  className="bg-white p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                >
+                  <span className="sr-only">View notifications</span>
+                  <BellIcon className="h-6 w-6" aria-hidden="true" />
+                </button> */}
+
+                {/* Profile dropdown */}
+                {
+                  user ?
+                
+                <Menu as="div" className="ml-3 relative">
+                  <div>
+                    <Menu.Button className="bg-white rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                      <span className="sr-only">Open user menu</span>
+                      <Image width={40} height={40} className="h-8 w-8 rounded-full" src={user.picture} alt={user.name} />
+                    </Menu.Button>
+                  </div>
+                  <Transition
+                    as={Fragment}
+                    enter="transition ease-out duration-200"
+                    enterFrom="transform opacity-0 scale-95"
+                    enterTo="transform opacity-100 scale-100"
+                    leave="transition ease-in duration-75"
+                    leaveFrom="transform opacity-100 scale-100"
+                    leaveTo="transform opacity-0 scale-95"
+                  >
+                    <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      <Menu.Item>
+                        {({ active }) => (
+                          <Link href="#">
+                          <a
+                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                          >
+                            Voir mon profil<br/> (bientôt disponible)
+                          </a>
+                          </Link>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <a
+                            href="api/auth/logout"
+                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                          >
+                            Se déconnecter
+                          </a>
+                        )}
+                      </Menu.Item>
+                    </Menu.Items>
+                  </Transition>
+                </Menu> :
+                 <div className="flex-shrink-0">
+                 
+                 <a
+                   href="/api/auth/login"
+                   className="relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-orange-link shadow-sm hover:bg-brand"
+                 >
+                   S'identifier
+                 </a>
+               </div>
+                }
+              </div>
             </div>
           </div>
-        </div>
-        {/*
-    Mobile menu, toggle classes based on menu state.
 
-    Menu open: "block", Menu closed: "hidden"
-  */}
-        <div className={responsiveMenuisOpen ? 'block md:hidden' : 'hidden'}>
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            <Link href="/devenir-developpeur">
-              <a
-                onClick={() => {
-                  setResponsiveMenu(!responsiveMenuisOpen)
-                }}
-                className="hover:bg-gray-700 hover:text-white block dark:text-gray-300 px-3 py-2 rounded-md text-base font-medium"
+          <Disclosure.Panel className="sm:hidden">
+            <div className="pt-2 pb-4 space-y-1">
+              {/* Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" */}
+              
+              <Disclosure.Button
+                className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
               >
+                <Link href="/devenir-developpeur">
                 Devenir Développeur
-              </a>
-            </Link>
-            <Link href="/nodejs">
-              <a
-                onClick={() => {
-                  setResponsiveMenu(!responsiveMenuisOpen)
-                }}
-                className="hover:bg-gray-700 hover:text-white block dark:text-gray-300 px-3 py-2 rounded-md text-base font-medium"
+                </Link>
+              </Disclosure.Button>
+              
+              <Disclosure.Button
+                className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
               >
-                Node
-              </a>
-            </Link>
-            <Link href="/mongodb">
-              <a
-                onClick={() => {
-                  setResponsiveMenu(!responsiveMenuisOpen)
-                }}
-                className="hover:bg-gray-700 hover:text-white block dark:text-gray-300 px-3 py-2 rounded-md text-base font-medium"
+              <Link href="/nodejs">
+                  Node
+              </Link>
+              </Disclosure.Button>
+              <Disclosure.Button
+                className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
               >
-                Mongodb
-              </a>
-            </Link>
-            <Link href="/postman">
-              <a
-                onClick={() => {
-                  setResponsiveMenu(!responsiveMenuisOpen)
-                }}
-                className="hover:bg-gray-700 hover:text-white block dark:text-gray-300 px-3 py-2 rounded-md text-base font-medium"
+                <Link href="/mongodb">
+                  MongoDB
+                </Link>
+              </Disclosure.Button>
+              <Disclosure.Button
+                className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
               >
-                Postman
-              </a>
-            </Link>
-            <Link href="/snowflake">
-              <a
-                onClick={() => {
-                  setResponsiveMenu(!responsiveMenuisOpen)
-                }}
-                className="hover:bg-gray-700 hover:text-white block dark:text-gray-300 px-3 py-2 rounded-md text-base font-medium"
+                <Link href="/postman">
+                  Postman
+                </Link>
+              </Disclosure.Button>
+              <Disclosure.Button
+                className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
               >
-                Snowflake
-              </a>
-            </Link>
-            <Link href="https://academy.practicalprogramming.fr">
-              <a
-                onClick={() => {
-                  setResponsiveMenu(!responsiveMenuisOpen)
-                }}
-                className="hover:bg-gray-700 hover:text-white block px-3 dark:text-gray-300 py-2 rounded-md text-base font-medium"
+                <Link href="/snowflake">
+                  Snowflake
+                </Link>
+              </Disclosure.Button>
+              <Disclosure.Button
+                className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
               >
-                Académie
-              </a>
-            </Link>
-          </div>
-        </div>
-      </nav>
-    </>
+                <Link href="https://academy.practicalprogramming.fr">
+                  Académie
+                </Link>
+              </Disclosure.Button>
+            </div>
+          </Disclosure.Panel>
+        </>
+      )}
+    </Disclosure>
   )
 }
