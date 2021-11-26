@@ -3,4 +3,6 @@ Sitemap: https://practicalprogramming.fr/sitemap.xml
 
 User-agent: *
 Disallow: /feedback/
+Disallow: /trigger/
 Disallow: /api/
+Disallow: /profile/

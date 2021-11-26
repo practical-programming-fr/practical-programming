@@ -25,11 +25,11 @@ import Rubriques from '../components/post/rubriques'
 import RelatedPost from '../components/post/relatedPost'
 import { useNextSanityImage } from 'next-sanity-image'
 
-import { useEffect } from 'react'
 import CardLink from '../components/post/cardLink'
 import OptinForm from '../components/post/optinForm'
 import MorePosts from '../components/post/morePosts'
 import WeLoveDevs from '../components/post/weLoveDevs'
+import ScriptTags from '../components/scriptTags'
 
 const article = `*[_type == "post" && slug.current == $slug][0]
 {
@@ -232,16 +232,10 @@ const BreadCrumbs: React.FC<any> = ({ post }) => {
 }
 
 const Post: React.FC<any> = ({ post, relatedPosts }) => {
-  useEffect(() => {
-    const script = document.createElement('script')
-    script.src = 'https://rbbm.activehosted.com/f/embed.php?id=7'
-    script.async = true
-    script.type = 'text/javascript'
-    document.body.appendChild(script)
-    return () => {
-      document.body.removeChild(script)
-    }
-  }, [])
+  const defaultPostScript = [
+    { src: 'https://rbbm.activehosted.com/f/embed.php?id=7', strategy: 'lazyOnload' },
+  ]
+  const customPostScripts = post.scripts ?? defaultPostScript
   return (
     <>
       <NextSeo
@@ -342,8 +336,12 @@ const Post: React.FC<any> = ({ post, relatedPosts }) => {
       </section>
       <MorePosts posts={post.recentPosts} />
       <WeLoveDevs />
-
-      <Script src="https://widget.welovedevs.com/jobs-widget.js" type="module" />
+      <ScriptTags scripts={customPostScripts} />
+      <Script
+        src="https://widget.welovedevs.com/jobs-widget.js"
+        type="module"
+        strategy="lazyOnload"
+      />
       <Footer />
     </>
   )

@@ -6,89 +6,53 @@ interface SectionProps {
   title: string
 }
 
-const Section2: React.FC<SectionProps> = () => {
+const Section2: React.FC<SectionProps> = ({ posts, title }) => {
   return (
     <section className="grid grid-cols-3 gap-4 max-w-5xl mx-auto">
       <div className="col-span-3 md:col-span-2 bg-blue">
-        <div className="flex">
-          <div className="mr-4 flex-shrink-0 self-end">
-            <Image
-              src="https://images.unsplash.com/photo-1619267110184-798fa0240faf?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
-              className="rounded-lg"
-              width={210}
-              height={210}
-            />
-          </div>
-          <div>
-            <p className="uppercase font-medium tracking-wider text-sm mt-2">category</p>
-            <h4 className="text-3xl font-extrabold mt-2">Lorem ipsum</h4>
-            <p className="mt-2">
-              Avoir des tests automatisés permet à une application d'être plus durable et résistante
-              aux évolutions. Entre les tests unitaires, tests fonctionnels ou tests end-to-end,
-              comment prioriser son temps de dev?
-            </p>
-            <Link href={`/test`}>
-              <a className="text-blue-500 inline-flex items-center md:mb-2 lg:mb-0 hover:underline dark:text-orange-link font-bold">
-                Lire la suite
-                <svg
-                  className="w-4 h-4 ml-2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M5 12h14" />
-                  <path d="M12 5l7 7-7 7" />
-                </svg>
-              </a>
-            </Link>
-          </div>
-        </div>
-      </div>
-      <div className="col-span-3 md:col-span-1">
-        <div className="h-full border-2 border-gray-200 dark:bg-light-gray dark:text-brand border-light-gray border-opacity-60 rounded-lg overflow-hidden dark:hover:border-brand">
-          <div className="p-6">
-            <Link href={`/test`}>
-              <a>
-                <h2 className="title-font font-bold text-lg text-gray-900 dark:text-white mb-3 uppercase hover:underline dark:hover:text-orange-link">
-                  Devenir développeur: le guide complet
-                </h2>
-              </a>
-            </Link>
-            <p className="mt-2">
-              Avoir des tests automatisés permet à une application d'être plus durable et résistante
-              aux évolutions. Entre les tests unitaires, tests fonctionnels ou tests end-to-end,
-              comment prioriser son temps de dev?
-            </p>
-            <div className="flex items-center flex-wrap ">
-              <Link href={`/test`}>
-                <a className="text-blue-500 inline-flex items-center md:mb-2 lg:mb-0 hover:underline dark:text-orange-link font-bold">
-                  Lire la suite
-                  <svg
-                    className="w-4 h-4 ml-2"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M5 12h14" />
-                    <path d="M12 5l7 7-7 7" />
+      <section className="text-gray-600 body-font">
+        <div className="container px-5 py-24 mx-auto flex flex-wrap">
+          <div className="flex flex-wrap -m-4">
+            <div className="p-4 lg:w-1/2 md:w-full">
+              <div className="flex border-2 rounded-lg border-gray-200 border-opacity-50 p-8 sm:flex-row flex-col">
+                <div className="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0">
+                  <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="w-8 h-8" viewBox="0 0 24 24">
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
                   </svg>
-                </a>
-              </Link>
+                </div>
+                <div className="flex-grow">
+                  <h2 className="text-gray-900 text-lg title-font font-medium mb-3">Shooting Stars</h2>
+                  <p className="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
+                  <a className="mt-3 text-indigo-500 inline-flex items-center">Learn More
+                    <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
             </div>
-            <div className="flex items-center flex-wrap justify-between">
-              <a className="text-gray-500 inline-flex items-center md:mb-2 lg:mb-0">Rayed</a>
-              <span className="text-gray-400 inline-flex items-center leading-none text-sm">
-                6 may 1987
-              </span>
+            <div className="p-4 lg:w-1/2 md:w-full">
+              <div className="flex border-2 rounded-lg border-gray-200 border-opacity-50 p-8 sm:flex-row flex-col">
+                <div className="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0">
+                  <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="w-10 h-10" viewBox="0 0 24 24">
+                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                    <circle cx={12} cy={7} r={4} />
+                  </svg>
+                </div>
+                <div className="flex-grow">
+                  <h2 className="text-gray-900 text-lg title-font font-medium mb-3">The Catalyzer</h2>
+                  <p className="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
+                  <a className="mt-3 text-indigo-500 inline-flex items-center">Learn More
+                    <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+      </section>
       </div>
     </section>
   )

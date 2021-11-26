@@ -8,7 +8,6 @@ export default async function handler(req, res) {
       firstName,
     },
   }
-  console.log(contact)
   try {
     const request = await axios.post('https://rbbm.api-us1.com/api/3/contact/sync', contact, {
       headers: { 'Api-Token': process.env.AC_KEY },

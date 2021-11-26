@@ -20,7 +20,7 @@ declare global {
 }
 
 const WeLoveDevs: React.FC<any> = () => (
-  <div className="max-w-7xl mx-auto mt-4 divide-y-2 divide-gray-200 py-4">
+  <div className="max-w-3xl mx-auto mt-4 divide-y-2 divide-gray-200 py-4">
     <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-4xl py-6">
       Les Jobs
     </h2>

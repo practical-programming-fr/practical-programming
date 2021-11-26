@@ -2,6 +2,7 @@ import Nav from '../components/nav'
 import Footer from '../components/footer'
 import Hero from '../components/hero'
 import Section from '../components/section'
+import Section2 from '../components/section2'
 import sanity from '../lib/sanity'
 import { NextSeo } from 'next-seo'
 
@@ -173,6 +174,7 @@ const IndexPage: React.FC<any> = ({ posts }) => {
       <div>
         <Nav />
         <Hero post={posts.heroPost} />
+        <Section posts={posts.latestPosts} title="Derniers Articles" />
         <Section posts={posts.conseilsCarriere} title="Conseil carrière" />
         <Section posts={posts.backend} title="Backend" />
         <Section posts={posts.frontend} title="Frontend" />
