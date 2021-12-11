@@ -277,11 +277,13 @@ const Post: React.FC<any> = ({ post, relatedPosts }) => {
         ]}
       />
       <Nav />
-      <section className="bg-white dark:bg-dark-gray dark:text-brand">
-        <div className="lg:flex lg:flex-wrap justify-center h-full">
-          <div className="flex-1 max-w-3xl">
-            <article className="px-8 py-8 bg-white dark:bg-dark-gray">
-              <h1 className="text-3xl lg:text-5xl dark:dark-white dark:text-white font-bold font-sans">
+      <section className="max-w-3xl mx-auto pt-4 sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-12">
+        <div className="hidden lg:block lg:col-span-3 p-4 max-w-lg">
+          <Summary post={post} />
+          <Rubriques post={post} />
+        </div>
+            <article className="lg:col-span-9 xl:col-span-6 dark:text-brand px-4">
+              <h1 className="text-3xl dark:dark-white font-bold font-sans pt-6">
                 {post.title}
               </h1>
               <ArticleJsonLd
@@ -316,23 +318,23 @@ const Post: React.FC<any> = ({ post, relatedPosts }) => {
                   </p>
                 </div>
               </div>
-              <Summary post={post} />
-              <Rubriques post={post} />
+              
+              
               <BlockContent
                 blocks={post.body}
                 className={markdownStyles.markdown}
                 serializers={serializers}
               />
             </article>
-          </div>
-          <div className="p-4 max-w-lg">
+
+          <div className="p-4 max-w-lg col-span-3">
             <RelatedPost
               relatedPosts={relatedPosts}
               category={post.categories.title}
               slug={post.categories.slug.current}
             />
           </div>
-        </div>
+
       </section>
       <MorePosts posts={post.recentPosts} />
       <WeLoveDevs />
