@@ -3,7 +3,7 @@ import dayjs from 'dayjs'
 
 const MorePosts: React.FC<any> = ({ posts }) => {
   return (
-    <div className="bg-white dark:bg-light-gray pt-8 pb-20 px-4 sm:px-6 lg:pt-16 lg:pb-28 lg:px-8">
+    <div className="bg-white dark:bg-bg-neutral-900 pt-8 pb-20 px-4 sm:px-6 lg:pt-16 lg:pb-28 lg:px-8">
       <div className="relative max-w-7xl mx-auto divide-y-2 divide-gray-200">
         <div>
           <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-4xl">

@@ -1,4 +1,4 @@
-import {connectToDatabase} from '../../../lib/mongodb'
+import connectToDatabase from "../../../lib/mongodb"
 
 const findTeam = async (query:string, skip:number = 0) => {
   const {db} = await connectToDatabase()

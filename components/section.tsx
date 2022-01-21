@@ -20,7 +20,7 @@ const Section: React.FC<SectionProps> = ({ posts, title }) => {
             {posts.map((post) => {
               return (
                 <div className="px-6 py-2" key={post.slug.current}>
-                  <div className="h-full border-2 border-gray-200 dark:bg-light-gray dark:text-brand border-light-gray border-opacity-60 rounded-lg overflow-hidden dark:hover:border-brand">
+                  <div className="h-full lg:shadow-lg bg-white dark:bg-bg-neutral-900 dark:text-brand border-bg-neutral-900 border-opacity-60 rounded-lg overflow-hidden dark:hover:border-brand">
 
                     <div className="p-6">
                       <Link href={`/${post.slug.current}`}>

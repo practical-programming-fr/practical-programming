@@ -82,7 +82,7 @@ const serializers = {
 
 const TechChallenges: React.FC<any> = ({ challenges }) => {
   return (
-    <div className="relative bg-white dark:bg-light-gray overflow-hidden">
+    <div className="relative bg-white dark:bg-bg-neutral-900 overflow-hidden">
       <div className="hidden lg:block lg:absolute lg:inset-y-0 lg:h-full lg:w-full">
         <div
           className="relative h-full text-lg max-w-4xl mx-auto dark:text-brand"

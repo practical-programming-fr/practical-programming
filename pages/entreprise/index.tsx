@@ -297,7 +297,7 @@ const Entreprises: React.FC<any> = ({teams}) => {
               </div>
                 <ul role="list" className="space-y-4 ">
                   {activeTeams.map((team) => (
-                    <li key={team._id} className="bg-white px-4 py-6 shadow sm:p-6 sm:rounded-lg dark:bg-light-gray">
+                    <li key={team._id} className="bg-white px-4 py-6 shadow sm:p-6 sm:rounded-lg dark:bg-bg-neutral-900">
                       <article aria-labelledby={'question-title-' + team._id}>
                         <div>
                           <div className="flex space-x-3">

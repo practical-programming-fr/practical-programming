@@ -1,4 +1,4 @@
-import {connectToDatabase} from '../../../lib/mongodb'
+import connectToDatabase from "../../../lib/mongodb"
 
 const UsersService = async (req,res) => {
   let users

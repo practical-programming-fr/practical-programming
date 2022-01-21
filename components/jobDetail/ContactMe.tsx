@@ -4,7 +4,7 @@ import Image from 'next/image'
 const ContactMe: React.FC<any> = ({ author }) => (
   <>
     {/* This example requires Tailwind CSS v2.0+ */}
-    <div className="bg-white dark:bg-light-gray">
+    <div className="bg-white dark:bg-bg-neutral-900">
       <div className="relative max-w-xl mx-auto py-12 px-4 sm:px-6 lg:px-8 lg:py-24">
         <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
           Contacte moi directement

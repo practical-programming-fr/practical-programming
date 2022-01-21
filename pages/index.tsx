@@ -222,7 +222,7 @@ const LeftNav: React.FC<any> = () => (
   <div className="hidden lg:block lg:col-span-3 xl:col-span-3">
     <div className="sticky top-4 space-y-4">
       <section>
-        <div className="bg-white dark:bg-light-gray rounded-lg shadow">
+        <div className="bg-white dark:bg-bg-neutral-900 rounded-lg shadow">
           <div className="p-6">
             <h2 id="who-to-follow-heading" className="text-base font-medium text-gray-900 dark:text-white">
               Teams
@@ -272,17 +272,6 @@ const LeftNav: React.FC<any> = () => (
                   <li key={post.id} className="flex py-4 space-x-3">
                     <div className="min-w-0 flex-1">
                       <p className="text-sm text-gray-800 font-bold dark:text-white">{post.title}</p>
-                      <div className="mt-2 flex">
-                        <span className="inline-flex items-center text-sm">
-                          <button
-                            type="button"
-                            className="inline-flex space-x-2 text-gray-400 hover:text-gray-500"
-                          >
-                            <ChatAltIcon className="h-5 w-5" aria-hidden="true" />
-                            <span className="font-medium text-gray-900">{post.comments}</span>
-                          </button>
-                        </span>
-                      </div>
                     </div>
                   </li>
                 ))}
@@ -353,7 +342,7 @@ const RightNav: React.FC<any> = ({categories}) => (
         </div>
       </section> */}
       <section>
-        <div className="bg-white rounded-lg shadow dark:bg-light-gray">
+        <div className="bg-white rounded-lg shadow dark:bg-bg-neutral-900">
           <div className="p-6">
             <h2 id="trending-heading" className="text-base font-medium text-gray-900 dark:text-white">
               Meilleurs Articles
@@ -394,7 +383,7 @@ const RightNav: React.FC<any> = ({categories}) => (
         </div>
       </section>
       <section>
-        <div className="bg-white rounded-lg shadow dark:bg-light-gray">
+        <div className="bg-white rounded-lg shadow dark:bg-bg-neutral-900">
           <div className="p-6">
             <h2 id="trending-heading" className="text-base font-medium text-gray-900 dark:text-white">
               Catégories

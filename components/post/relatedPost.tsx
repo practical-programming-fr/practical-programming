@@ -6,7 +6,7 @@ const RelatedPost: React.FC<any> = ({ relatedPosts, category, slug }) => {
   }
   return (
     <div className="hidden xl:block xl:col-span-3">
-      <aside className="px-8 pt-8 bg-white dark:bg-light-gray rounded-lg pb-2 md:text-red">
+      <aside className="px-8 pt-8 bg-white dark:bg-nav-gray rounded-lg pb-2 md:text-red">
         <Link href={`/category/${slug}/`}>
           <a className="tracking-widest text-md title-font font-medium text-blue-600 dark:text-brand mb-3 uppercase cursor-pointer">
             Dans la catégorie {category}

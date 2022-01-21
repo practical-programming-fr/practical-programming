@@ -11,7 +11,7 @@ if (!cached) {
   cached = global.mongo = { conn: null, promise: null }
 }
 
-export const connectToDatabase = async (): Promise<{ client: MongoClient; db: Db }> => {
+const connectToDatabase = async (): Promise<{ client: MongoClient; db: Db }> => {
   if (cached.conn) {
     return cached.conn
   }
@@ -27,3 +27,5 @@ export const connectToDatabase = async (): Promise<{ client: MongoClient; db: Db
   cached.conn = await cached.promise
   return cached.conn
 }
+
+export default connectToDatabase

@@ -30,6 +30,7 @@ import OptinForm from '../components/post/optinForm'
 import MorePosts from '../components/post/morePosts'
 import WeLoveDevs from '../components/post/weLoveDevs'
 import ScriptTags from '../components/scriptTags'
+import TipBox from '../components/post/tipBox'
 
 const article = `*[_type == "post" && slug.current == $slug][0]
 {
@@ -277,7 +278,7 @@ const Post: React.FC<any> = ({ post, relatedPosts }) => {
         ]}
       />
       <Nav />
-      <section className="max-w-3xl mx-auto pt-4 sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-12">
+      <section className="max-w-3xl mx-auto pt-4 sm:px-6 lg:max-w-7xl xl:max-w-[75%] lg:px-8 lg:grid lg:grid-cols-12">
         <div className="hidden lg:block lg:col-span-3 p-4 max-w-lg">
           <Summary post={post} />
           <Rubriques post={post} />
@@ -318,7 +319,6 @@ const Post: React.FC<any> = ({ post, relatedPosts }) => {
                   </p>
                 </div>
               </div>
-              
               
               <BlockContent
                 blocks={post.body}

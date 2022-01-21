@@ -7,7 +7,7 @@ const Rubriques: React.FC<any> = ({ post }) => {
       <>
         <>
           {/* This example requires Tailwind CSS v2.0+ */}
-          <div className="relative bg-gray-50 dark:bg-light-gray pb-12 px-4 sm:px-6 lg:pt-4 lg:px-8 rounded-lg">
+          <div className="relative bg-gray-50 dark:bg-nav-gray pb-12 px-4 sm:px-6 lg:pt-4 lg:px-8 rounded-lg">
             <div className="relative max-w-7xl mx-auto">
               <div className="text-center">
                 <p className="text-center font-extrabold text-gray-900 dark:text-white sm:text-xl">
@@ -18,7 +18,7 @@ const Rubriques: React.FC<any> = ({ post }) => {
                 {relatedPosts.map((relatedPost) => {
                   return (
 
-                        <dt className="flex-1 py-4">
+                        <dt className="flex-1 py-4" key={relatedPost.slug.ccurrent}>
                           <Link href={`/${relatedPost.slug.current}`}>
                             <a className="block mt-2">
                               <p className="text-md font-extrabold text-gray-900 dark:text-white dark:hover:text-orange-link">
