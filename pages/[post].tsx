@@ -278,7 +278,7 @@ const Post: React.FC<any> = ({ post, relatedPosts }) => {
         ]}
       />
       <Nav />
-      <section className="max-w-3xl mx-auto pt-4 sm:px-6 lg:max-w-7xl xl:max-w-[75%] lg:px-8 lg:grid lg:grid-cols-12">
+      <section className="mx-auto pt-4 sm:px-6 xl:max-w-7xl lg:px-8 lg:grid lg:grid-cols-12">
         <div className="hidden lg:block lg:col-span-3 p-4 max-w-lg">
           <Summary post={post} />
           <Rubriques post={post} />

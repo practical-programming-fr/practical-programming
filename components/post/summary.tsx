@@ -25,12 +25,12 @@ const Summary: React.FC<any> = ({ post }) => {
                 <div className="pt-2" key={title._key}>
                   <dt className="text-sm">
                     {/* Expand/collapse question button */}
-                    <button className="text-left w-full flex justify-between items-start dark:text-gray-100 text-gray-800">
+                    <p className="text-left font-bold w-full flex justify-between items-start dark:text-gray-100 text-gray-800">
                       <AnchorLink href={`#${slugify(title.children[0].text, options)}`}>
                         {title.children[0].text}
                       </AnchorLink>
                       <span className="ml-6 h-7 flex items-center"></span>
-                    </button>
+                    </p>
                   </dt>
                 </div>
               ))}
