@@ -99,7 +99,7 @@ const serializers = {
 
 const OurOpinion: React.FC<any> = ({ opinion }) => {
   return (
-    <div className="bg-gray-50 dark:bg-light-gray pt-16 lg:py-24">
+    <div className="bg-gray-50 dark:bg-bg-neutral-900 pt-16 lg:py-24">
       <div className="pb-16 bg-blue-600 dark:bg-orange-link lg:pb-0 lg:z-10 lg:relative">
         <div className="mx-auto max-w-4xl lg:px-8">
           <div className="mt-12 lg:m-0 lg:col-span-2 lg:pl-8">

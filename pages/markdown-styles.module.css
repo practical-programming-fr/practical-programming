@@ -25,7 +25,7 @@
   }
 
   .markdown a {
-    @apply underline font-medium leading-loose text-blue-500;
+    @apply underline font-medium leading-loose;
   }
   
   .markdown ul {
