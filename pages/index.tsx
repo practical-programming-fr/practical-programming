@@ -9,7 +9,13 @@ import { NextSeo } from 'next-seo'
 
 import { GetStaticProps } from 'next'
 
-const getCategories = '*[_type == "category"]{"id":_id,title,"slug":slug.current,_updatedAt}'
+const getCategories = `*[_type == "category"]{
+  "id":_id,
+  title,
+  "slug":slug.current,
+  _updatedAt,
+  "nbOfPosts": count(*[_type == "post" && references(^._id) ])
+}`
 
 const getPosts = `{
   "heroPost": *[_type == "post"]
@@ -390,11 +396,12 @@ const RightNav: React.FC<any> = ({categories}) => (
             </h2>
             <div className="mt-6 flow-root">
               <ul role="list" className="-my-4 divide-y divide-gray-200">
-                {categories.map((category) => (
+                {categories.sort((a,b) => b.nbOfPosts - a.nbOfPosts).map((category) => (
                   <li key={category.id} className="flex py-2 space-x-3">
                     <div className="min-w-0 flex-1">
                       <Link href={`/category/${category.slug}`}>
-                        <a className="text-sm text-gray-800 dark:text-brand dark:hover:text-orange-link">{category.title}</a>
+                        <a className="text-sm text-gray-800 dark:text-brand dark:hover:text-orange-link">{category.title} <span className='float-right'>{category.nbOfPosts} articles</span></a>
+                        
                       </Link>
                     </div>
                   </li>
