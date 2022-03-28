@@ -40,7 +40,9 @@ const Categories: React.FC<CategoryProps> = ({ posts, category }) => {
       />
       <div>
         <Nav />
-        <h1>{category.title} - Découvrez nos articles</h1>
+        <div className="max-w-5xl mx-auto mt-4">
+          <h1 className="text-xl dark:text-white mx-auto my-2">{category.title} - Découvrez nos articles</h1>
+        </div>
         <Section posts={posts} title={category.title} />
         <BreadcrumbJsonLd
           itemListElements={[

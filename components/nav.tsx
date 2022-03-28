@@ -16,7 +16,7 @@ export default function Nav() {
   const { user, error, isLoading } = useUser();
   if (error) return <div>{error.message}</div>;
   return (
-    <Disclosure as="nav" className="bg-white dark:bg-nav-gray border-b dark:border-nav-gray">
+    <Disclosure as="nav" className="bg-white border-b dark:bg-nav-gray">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2">
@@ -43,7 +43,7 @@ export default function Nav() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={2}
-                      className="block w-10 h-10 text-white p-2 bg-blue-500 rounded-full"
+                      className="block w-10 h-10 text-white p-2 rounded-full bg-blue-400 dark:bg-orange-link"
                       viewBox="0 0 24 24"
                     >
                       <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
@@ -58,32 +58,32 @@ export default function Nav() {
                 </div>
                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
                   <Link href="/devenir-developpeur">
-                    <a className="border-transparent hover:border-gray-300 text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                    <a className="border-transparent hover:border-gray-300 text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 dark:border-nav-gray text-sm font-medium">
                       Devenir Développeur
                     </a>
                   </Link>
                   <Link href="/nodejs">
-                  <a className="border-transparent hover:border-gray-300 text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                      Node
+                  <a className="border-transparent hover:border-gray-300 text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 dark:border-nav-gray text-sm font-medium">
+                      NodeJS
                     </a>
                   </Link>
                   <Link href="/mongodb">
-                  <a className="border-transparent hover:border-gray-300 text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                  <a className="border-transparent hover:border-gray-300 text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 dark:border-nav-gray text-sm font-medium">
                       MongoDB
                     </a>
                   </Link>
                   <Link href="/postman">
-                  <a className="border-transparent hover:border-gray-300 text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                  <a className="border-transparent hover:border-gray-300 text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 dark:border-nav-gray text-sm font-medium">
                       Postman
                     </a>
                   </Link>
                   <Link href="/snowflake">
-                  <a className="border-transparent hover:border-gray-300 text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                  <a className="border-transparent hover:border-gray-300 text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 dark:border-nav-gray text-sm font-medium">
                       Snowflake
                     </a>
                   </Link>
                   <Link href="https://academy.practicalprogramming.fr">
-                  <a className="border-transparent hover:border-gray-300 text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                  <a className="border-transparent hover:border-gray-300 text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 dark:border-nav-gray text-sm font-medium">
                       Académie
                     </a>
                   </Link>
@@ -147,7 +147,7 @@ export default function Nav() {
                  
                  <a
                    href="/api/auth/login"
-                   className="relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-orange-link shadow-sm hover:bg-brand"
+                   className="relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-orange-link shadow-sm hover:bg-brand dark:border-orange-link dark:hover:border-brand"
                  >
                    S'identifier
                  </a>
@@ -173,7 +173,7 @@ export default function Nav() {
                 className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
               >
               <Link href="/nodejs">
-                  Node
+                  NodeJS
               </Link>
               </Disclosure.Button>
               <Disclosure.Button

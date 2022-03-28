@@ -11,7 +11,7 @@ const urlFor = (source: SanityImageSource) => {
 const KeyPlayers: React.FC<any> = ({ team }) => {
   console.log()
   return (
-    <div className="bg-white dark:bg-light-gray">
+    <div className="bg-white dark:bg-bg-neutral-900">
       <div className="mx-auto py-12 px-4 max-w-4xl sm:px-6 lg:px-8 lg:py-24">
         <div className="space-y-12 lg:grid lg:grid-cols-5 lg:gap-8 lg:space-y-0">
           <div className="space-y-5 sm:space-y-4 lg:col-span-3">
