@@ -21,11 +21,10 @@ const Section: React.FC<SectionProps> = ({ posts, title }) => {
               return (
                 <div className="px-6 py-2" key={post.slug.current}>
                   <div className="h-full lg:shadow-lg bg-white dark:bg-bg-neutral-900 dark:text-brand border-bg-neutral-900 border-opacity-60 rounded-lg overflow-hidden dark:hover:border-brand">
-
                     <div className="p-6">
                       <Link href={`/${post.slug.current}`}>
                         <a>
-                          <h2 className="title-font font-bold text-lg text-gray-900 dark:text-white uppercase hover:underline dark:hover:text-orange-link">
+                          <h2 className="title-font font-bold text-lg text-gray-900 dark:text-orange-link uppercase hover:underline dark:hover:text-orange-link">
                             {post.title}
                           </h2>
                         </a>

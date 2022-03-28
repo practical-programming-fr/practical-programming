@@ -5,7 +5,7 @@ export default function Hero({ post }) {
       <div className="bg-white dark:bg-neutral-900 lg:mx-8 lg:flex-col lg:max-w-5xl lg:shadow-lg lg:rounded-lg">
         <div className="py-8 px-8 max-w-xl lg:max-w-5xl">
           <Link href={`/${post.slug.current}`}>
-            <h2 className="text-2xl text-gray-800 dark:text-white font-bold md:text-3xl hover:underline cursor-pointer">
+            <h2 className="text-2xl text-gray-800 dark:text-orange-link font-bold md:text-3xl hover:underline cursor-pointer">
               {post.title}
             </h2>
           </Link>

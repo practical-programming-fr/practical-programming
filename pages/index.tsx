@@ -350,7 +350,7 @@ const RightNav: React.FC<any> = ({categories}) => (
       <section>
         <div className="bg-white rounded-lg shadow dark:bg-bg-neutral-900">
           <div className="p-6">
-            <h2 id="trending-heading" className="text-base font-medium text-gray-900 dark:text-white">
+            <h2 id="trending-heading" className="text-base font-medium text-gray-900 dark:text-orange-link">
               Meilleurs Articles
             </h2>
             <div className="mt-6 flow-root">
@@ -391,7 +391,7 @@ const RightNav: React.FC<any> = ({categories}) => (
       <section>
         <div className="bg-white rounded-lg shadow dark:bg-bg-neutral-900">
           <div className="p-6">
-            <h2 id="trending-heading" className="text-base font-medium text-gray-900 dark:text-white">
+            <h2 id="trending-heading" className="text-base font-medium text-gray-900 dark:text-orange-link">
               Catégories
             </h2>
             <div className="mt-6 flow-root">
